@@ -45,12 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IReadLogFile.cs" />
-    <Compile Include="IShowActiveProcess.cs" />
+    <Compile Include="IShowActiveProcesses.cs" />
     <Compile Include="IStartProcess.cs" />
     <Compile Include="IStopProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StopAllProcesses.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="IStopAllProcesses.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

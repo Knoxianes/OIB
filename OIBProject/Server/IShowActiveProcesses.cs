@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace Server
 {
     [ServiceContract]
-    public interface StopAllProcesses
+    public interface IShowActiveProcesses
     {
         [OperationContract]
-        void StopAllProcesses();
+        //List<Process>ShowActiveProcesses();
+        int a();
     }
 }
