@@ -1,8 +1,0 @@
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\bin\Debug\Logger.exe.config
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\bin\Debug\Logger.exe
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\bin\Debug\Logger.pdb
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\obj\Debug\Logger.csproj.SuggestedBindingRedirects.cache
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\obj\Debug\Logger.exe
-C:\Users\veljk\Desktop\OIBProject\OIB\OIBProject\Logger\obj\Debug\Logger.pdb
