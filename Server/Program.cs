@@ -17,7 +17,7 @@ namespace MainComponent
         static void Main(string[] args)
         {
             // Define the expected service certificate. It is required to establish cmmunication using certificates.
-            string srvCertCN = "Certificates";
+            string srvCertCN = "wcfservice";
 
             NetTcpBinding bindingServerMainComponenet = new NetTcpBinding(); //Binding za main component kada je main componenet server
             string addressServerMainComponent = "net.tcp://localhost:4000/IProcessServis"; // Adresa za main component kada je main component server
