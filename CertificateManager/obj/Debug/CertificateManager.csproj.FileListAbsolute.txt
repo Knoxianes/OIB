@@ -1,0 +1,6 @@
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\HP\Downloads\OIB-main\OIB-main\CertificateManager\obj\Debug\CertificateManager.pdb

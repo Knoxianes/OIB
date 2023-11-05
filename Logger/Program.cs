@@ -1,10 +1,13 @@
-﻿using Common;
+﻿using CertificateManager;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel.Security;
 
 namespace Logger
 {
@@ -12,10 +15,28 @@ namespace Logger
     {
         static void Main(string[] args)
         {
+            /// srvCertCN.SubjectName should be set to the service's username. .NET WindowsIdentity class provides information about Windows user running the given process
+			string srvCertCN = CertificateManager.Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+
             NetTcpBinding binding = new NetTcpBinding();
+
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+
             string address = "net.tcp://localhost:4001/ILogger";
             ServiceHost host = new ServiceHost(typeof(LoggerServis));
             host.AddServiceEndpoint(typeof(ILogger), binding, address);
+
+            ///Custom validation mode enables creation of a custom validator - CustomCertificateValidator
+            host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.Custom;
+            host.Credentials.ClientCertificate.Authentication.CustomCertificateValidator = new ServiceCertValidator();
+
+            ///If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
+            host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
+
+            ///Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
+            host.Credentials.ServiceCertificate.Certificate = Manager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
+
+            
             try
             {
                 host.Open();

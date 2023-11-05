@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Security.Cryptography.X509Certificates;
 using System.Security;
 
-namespace Manager
+namespace CertificateManager
 {
-    public class CertManager
+    public class Manager
     {
-
-        // Get a certificate with the specified subject name from the predefined certificate storage
-        public static X509Certificate2 GetCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string subjectName)
+		// Get a certificate with the specified subject name from the predefined certificate storage
+		public static X509Certificate2 GetCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string subjectName)
         {
             X509Store store = new X509Store(storeName, storeLocation);
             store.Open(OpenFlags.ReadOnly);
@@ -30,8 +25,7 @@ namespace Manager
             return null;
         }
 
-      
-        // Get a certificate from file.	
+        // Get a certificate from file.		
         public static X509Certificate2 GetCertificateFromFile(string fileName)
         {
             X509Certificate2 certificate = null;
@@ -40,9 +34,8 @@ namespace Manager
             return certificate;
         }
 
-       
         // Get a certificate from file.
-		public static X509Certificate2 GetCertificateFromFile(string fileName, SecureString pwd)
+  		public static X509Certificate2 GetCertificateFromFile(string fileName, SecureString pwd)
         {
             X509Certificate2 certificate = null;
 

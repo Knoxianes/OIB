@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Common;
 
@@ -32,6 +34,11 @@ namespace MainComponent
         public void StopProcess()
         {
             throw new NotImplementedException();
+        }
+
+        public void TestCommunication()
+        {
+            Console.WriteLine("Communication established.");
         }
     }
 }

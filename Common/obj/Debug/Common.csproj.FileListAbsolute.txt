@@ -4,9 +4,9 @@ C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.csproj.AssemblyRefere
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.dll
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.pdb
-C:\Users\Andrea\Desktop\ProjekatGit\Common\bin\Debug\Common.dll
-C:\Users\Andrea\Desktop\ProjekatGit\Common\bin\Debug\Common.pdb
-C:\Users\Andrea\Desktop\ProjekatGit\Common\obj\Debug\Common.csproj.AssemblyReference.cache
-C:\Users\Andrea\Desktop\ProjekatGit\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
-C:\Users\Andrea\Desktop\ProjekatGit\Common\obj\Debug\Common.dll
-C:\Users\Andrea\Desktop\ProjekatGit\Common\obj\Debug\Common.pdb
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\bin\Debug\Common.dll
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\bin\Debug\Common.pdb
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\obj\Debug\Common.dll
+C:\Users\HP\Downloads\OIB-main\OIB-main\Common\obj\Debug\Common.pdb

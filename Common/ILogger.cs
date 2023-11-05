@@ -12,5 +12,8 @@ namespace Common
     {
         [OperationContract]
         void Read();
+
+        [OperationContract]
+        void TestCommunication();
     }
 }

@@ -20,5 +20,7 @@ namespace Common
         void StopAllProcesses(); 
         [OperationContract]
         void ReadLogFile();
+        [OperationContract]
+        void TestCommunication();
     }
 }

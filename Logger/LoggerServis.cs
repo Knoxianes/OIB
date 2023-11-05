@@ -13,5 +13,10 @@ namespace Logger
         {
             throw new NotImplementedException();
         }
+
+        public void TestCommunication()
+        {
+            Console.WriteLine("Communication established.");
+        }
     }
 }
