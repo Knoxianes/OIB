@@ -16,3 +16,14 @@ C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.pdb
 C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Common.dll
 C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Common.pdb
 C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\bin\Debug\Logger.exe.config
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\bin\Debug\Logger.exe
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\bin\Debug\Logger.pdb
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\bin\Debug\Common.dll
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\bin\Debug\Common.pdb
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.csproj.SuggestedBindingRedirects.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.csproj.CopyComplete
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.exe
+C:\Users\Andrea\Desktop\ProjekatGit\Logger\obj\Debug\Logger.pdb

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7731D3AE-0D16-435F-9454-8907F1384EE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertificateManager", "CertificateManager\CertificateManager.csproj", "{6A113BF7-B088-47C7-A401-A50B788F24F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7731D3AE-0D16-435F-9454-8907F1384EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7731D3AE-0D16-435F-9454-8907F1384EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7731D3AE-0D16-435F-9454-8907F1384EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A113BF7-B088-47C7-A401-A50B788F24F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A113BF7-B088-47C7-A401-A50B788F24F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A113BF7-B088-47C7-A401-A50B788F24F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A113BF7-B088-47C7-A401-A50B788F24F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

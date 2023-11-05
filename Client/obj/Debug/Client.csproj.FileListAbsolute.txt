@@ -16,3 +16,14 @@ C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.csproj.CoreCompileInp
 C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.exe
 C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.pdb
+C:\Users\Andrea\Desktop\ProjekatGit\Client\bin\Debug\Client.exe.config
+C:\Users\Andrea\Desktop\ProjekatGit\Client\bin\Debug\Client.exe
+C:\Users\Andrea\Desktop\ProjekatGit\Client\bin\Debug\Client.pdb
+C:\Users\Andrea\Desktop\ProjekatGit\Client\bin\Debug\Common.dll
+C:\Users\Andrea\Desktop\ProjekatGit\Client\bin\Debug\Common.pdb
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.exe
+C:\Users\Andrea\Desktop\ProjekatGit\Client\obj\Debug\Client.pdb
