@@ -1,0 +1,12 @@
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Logger.exe.config
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Logger.exe
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Logger.pdb
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\CertificateManager.dll
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Common.dll
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\CertificateManager.pdb
+C:\Users\knox\Documents\GitHub\OIB\Logger\bin\Debug\Common.pdb
+C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
+C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.exe
+C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.pdb

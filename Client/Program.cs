@@ -25,6 +25,7 @@ namespace Client
             using (WCFClient proxy = new WCFClient(binding, address))
             {
                 Console.WriteLine("Client Started > " + WindowsIdentity.GetCurrent().Name);
+                proxy.TestComunication();
                 Console.ReadLine();
             }
         }

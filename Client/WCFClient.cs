@@ -21,6 +21,11 @@ namespace Client
             factory = this.CreateChannel();
         }
 
+        public void TestComunication()
+        {
+            factory.TestCommunication();
+        }
+
         public void Dispose()
         {
             if (factory != null)

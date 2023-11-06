@@ -16,11 +16,14 @@ namespace Logger
         static void Main(string[] args)
         {
             /// srvCertCN.SubjectName should be set to the service's username. .NET WindowsIdentity class provides information about Windows user running the given process
-			string srvCertCN = CertificateManager.Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+			string srvCertCN = "wcflogger";
 
             NetTcpBinding binding = new NetTcpBinding();
 
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+            binding.MaxReceivedMessageSize = 10000;
+            binding.MaxBufferPoolSize = 10000;
+            binding.MaxBufferSize = 10000;
 
             string address = "net.tcp://localhost:4001/ILogger";
             ServiceHost host = new ServiceHost(typeof(LoggerServis));
@@ -28,7 +31,7 @@ namespace Logger
 
             ///Custom validation mode enables creation of a custom validator - CustomCertificateValidator
             host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.Custom;
-            host.Credentials.ClientCertificate.Authentication.CustomCertificateValidator = new ServiceCertValidator();
+            host.Credentials.ClientCertificate.Authentication.CustomCertificateValidator = new ClientCertValidator();
 
             ///If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
             host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
@@ -46,7 +49,7 @@ namespace Logger
             catch (Exception e)
             {
                 Console.WriteLine("[ERROR] {0}", e.Message);
-                Console.WriteLine("[StackTrace] {0}", e.StackTrace);
+                Console.ReadLine();
             }
             finally
             {

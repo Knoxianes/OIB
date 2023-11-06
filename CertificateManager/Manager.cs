@@ -11,10 +11,10 @@ namespace CertificateManager
             X509Store store = new X509Store(storeName, storeLocation);
             store.Open(OpenFlags.ReadOnly);
 
-            X509Certificate2Collection certCollection = store.Certificates.Find(X509FindType.FindBySubjectName, subjectName, true);
+            //X509Certificate2Collection certCollection = store.Certificates.Find(X509FindType.FindBySubjectName, subjectName, true);
 
             // Check whether the subjectName of the certificate is exactly the same as the given "subjectName"
-            foreach (X509Certificate2 c in certCollection)
+            foreach (X509Certificate2 c in store.Certificates)
             {
                 if (c.SubjectName.Name.Equals(string.Format("CN={0}", subjectName)))
                 {

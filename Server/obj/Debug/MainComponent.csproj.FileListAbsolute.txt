@@ -1,0 +1,12 @@
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Server.exe.config
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Server.exe
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Server.pdb
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\CertificateManager.dll
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Common.dll
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\CertificateManager.pdb
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Common.pdb
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.AssemblyReference.cache
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.CoreCompileInputs.cache
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.CopyComplete
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\Server.exe
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\Server.pdb

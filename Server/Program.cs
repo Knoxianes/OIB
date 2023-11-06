@@ -17,15 +17,14 @@ namespace MainComponent
         static void Main(string[] args)
         {
             // Define the expected service certificate. It is required to establish cmmunication using certificates.
-            string srvCertCN = "wcfservice";
+            string srvCertCN = "wcflogger";
 
             NetTcpBinding bindingServerMainComponenet = new NetTcpBinding(); //Binding za main component kada je main componenet server
             string addressServerMainComponent = "net.tcp://localhost:4000/IProcessServis"; // Adresa za main component kada je main component server
             NetTcpBinding bindingClientMainComponent = new NetTcpBinding(); // Binding za main component kada je main componenet client
 
             // Use Manager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
-            X509Certificate2 srvCert = Manager.GetCertificateFromStorage(StoreName.TrustedPeople, StoreLocation.LocalMachine, srvCertCN);
-
+            X509Certificate2 srvCert = Manager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
 
             EndpointAddress addressClientMainComponent = new EndpointAddress(new Uri("net.tcp://localhost:4001/ILogger"),
                                       new X509CertificateEndpointIdentity(srvCert)); // Adresa za konekciju maincomponenta kao clienta sa logerom koji je server
@@ -34,7 +33,8 @@ namespace MainComponent
             bindingServerMainComponenet.Security.Mode = SecurityMode.Transport;
             bindingServerMainComponenet.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             bindingServerMainComponenet.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
-            bindingServerMainComponenet.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+
+            bindingClientMainComponent.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
 
             ServiceHost host = new ServiceHost(typeof(ProcessServis));
             host.AddServiceEndpoint(typeof(IProcessServis), bindingServerMainComponenet, addressServerMainComponent);
@@ -45,7 +45,6 @@ namespace MainComponent
                 using (WCFClient proxy = new WCFClient(bindingClientMainComponent, addressClientMainComponent))
                 {
                     proxy.TestCommunication();
-                    Console.WriteLine("Server Started > " + WindowsIdentity.GetCurrent().Name);
                     Console.ReadLine();
                 }
             }
@@ -53,6 +52,7 @@ namespace MainComponent
             {
                 Console.WriteLine("[ERROR] {0}", e.Message);
                 Console.WriteLine("[StackTrace] {0}", e.StackTrace);
+                Console.ReadLine();
             }
             finally
             {
