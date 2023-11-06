@@ -16,7 +16,7 @@ namespace Logger
         static void Main(string[] args)
         {
             /// srvCertCN.SubjectName should be set to the service's username. .NET WindowsIdentity class provides information about Windows user running the given process
-			string srvCertCN = "wcflogger";
+			string srvCertCN = CertificateManager.Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
 
             NetTcpBinding binding = new NetTcpBinding();
 
