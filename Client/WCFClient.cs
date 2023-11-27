@@ -28,42 +28,42 @@ namespace Client
             factory.TestCommunication();
         }
 
-        public ProcessServis StartProcess(int key)
+        public bool StartProcess(int key)
         {
-            ProcessServis ps = null;
+            bool retValue = false;
             try
             {
-                ps = factory.StartProcess(key);
+                retValue = factory.StartProcess(key);
                 Console.WriteLine("Start Process allowed");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Start Process : {0}", e.Message);
             }
-            return ps;
+            return retValue;
         }
 
-        public ProcessServis StopProcess(int key)
+        public bool StopProcess(int key)
         {
-            ProcessServis ps = null;
+            bool retValue = false;
             try
             {
-                ps = factory.StopProcess(key);
+                retValue = factory.StopProcess(key);
                 Console.WriteLine("Stop Process allowed");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop Process : {0}", e.Message);
             }
-            return ps;
+            return retValue;
         }
 
-        public ProcessServis ShowActiveProcesses(int key)
+        public List<Proces> ShowActiveProcesses()
         {
-            ProcessServis ps = null;
+            List<Proces> ps = new List<Proces>();
             try
             {
-                ps = factory.ShowActiveProcesses(key);
+                ps = factory.ShowActiveProcesses();
                 Console.WriteLine("Show Active Processes allowed");
             }
             catch (Exception e)
@@ -73,61 +73,26 @@ namespace Client
             return ps;
         }
 
-        public ProcessServis StopAllProcesses(int key)
+        public bool StopAllProcesses()
         {
-            ProcessServis ps = null;
+            bool retValue = false;
             try
             {
-                ps = factory.StopAllProcesses(key);
+                retValue = factory.StopAllProcesses();
                 Console.WriteLine("Stop All Processes allowed");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop All Processes : {0}", e.Message);
             }
-            return ps;
+            return retValue;
         }
 
-        public ProcessServis ReadLogFile(int key)
+        public void ReadLogFile()
         {
-            ProcessServis ps = null;
-            try
-            {
-                ps = factory.ReadLogFile(key);
-                Console.WriteLine("Read Log File allowed");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error while trying to Read Log File : {0}", e.Message);
-            }
-            return ps;
+            throw new NotImplementedException();
         }
 
-        public void ManagePermission(bool isAdd, string rolename, params string[] permissions)
-        {
-            try
-            {
-                factory.ManagePermission(isAdd, rolename, permissions);
-                Console.WriteLine("Manage allowed");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error while trying to Manage : {0}", e.Message);
-            }
-        }
-
-        public void ManageRoles(bool isAdd, string rolename)
-        {
-            try
-            {
-                factory.ManageRoles(isAdd, rolename);
-                Console.WriteLine("Manage allowed");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error while trying to Manage : {0}", e.Message);
-            }
-        }
 
         public void Dispose()
         {
