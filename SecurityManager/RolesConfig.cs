@@ -96,7 +96,36 @@ namespace SecurityManager
             writer.Generate();
             writer.Close();
         }
-
         
+
+        public static void AddRole(string rolename)
+        {
+            var reader = new ResXResourceReader(path);
+            var node = reader.GetEnumerator();
+            var writer = new ResXResourceWriter(path);
+            while (node.MoveNext())
+            {
+                writer.AddResource(node.Key.ToString(), node.Value.ToString());
+            }
+            var newNode = new ResXDataNode(rolename, "");
+            writer.AddResource(newNode);
+            writer.Generate();
+            writer.Close();
+        }
+
+        public static void RemoveRole(string rolename)
+        {
+            var reader = new ResXResourceReader(path);
+            var node = reader.GetEnumerator();
+            var writer = new ResXResourceWriter(path);
+            while (node.MoveNext())
+            {
+                if (!node.Key.ToString().Equals(rolename))
+                    writer.AddResource(node.Key.ToString(), node.Value.ToString());
+            }
+
+            writer.Generate();
+            writer.Close();
+        }
     }
 }
