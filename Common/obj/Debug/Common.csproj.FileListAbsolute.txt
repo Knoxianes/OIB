@@ -4,3 +4,9 @@ C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.csproj.AssemblyRefere
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.dll
 C:\Users\knox\Documents\GitHub\OIB\Common\obj\Debug\Common.pdb
+C:\Users\HP\Documents\FAKS\OIB\Common\bin\Debug\Common.dll
+C:\Users\HP\Documents\FAKS\OIB\Common\bin\Debug\Common.pdb
+C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.dll
+C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.pdb

@@ -4,3 +4,9 @@ C:\Users\knox\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManag
 C:\Users\knox\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
 C:\Users\knox\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.dll
 C:\Users\knox\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.pdb
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.pdb

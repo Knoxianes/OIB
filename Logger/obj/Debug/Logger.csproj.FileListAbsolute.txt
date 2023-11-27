@@ -10,3 +10,15 @@ C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CoreCompileInp
 C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
 C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.exe
 C:\Users\knox\Documents\GitHub\OIB\Logger\obj\Debug\Logger.pdb
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\Logger.exe.config
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\Logger.exe
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\Logger.pdb
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\CertificateManager.dll
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\Common.dll
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\CertificateManager.pdb
+C:\Users\HP\Documents\FAKS\OIB\Logger\bin\Debug\Common.pdb
+C:\Users\HP\Documents\FAKS\OIB\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\FAKS\OIB\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\FAKS\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
+C:\Users\HP\Documents\FAKS\OIB\Logger\obj\Debug\Logger.exe
+C:\Users\HP\Documents\FAKS\OIB\Logger\obj\Debug\Logger.pdb

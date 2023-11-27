@@ -1,8 +1,10 @@
 ﻿using CertificateManager;
 using Common;
 using System;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
 using System.Security.Principal;
 using System.ServiceModel;
 
@@ -36,6 +38,38 @@ namespace MainComponent
             {
                 Console.WriteLine("[TestCommunication] ERROR = {0}", e.Message);
             }
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
+        public void StartProcess()
+        {
+            
+
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
+        public void StopProcess()
+        {
+
+
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
+        public void ShowActiveProcesses()
+        {
+            
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public void StopAllProcesses()
+        {
+
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public void ReadLogFile()
+        {
+
         }
 
         public void Dispose()
