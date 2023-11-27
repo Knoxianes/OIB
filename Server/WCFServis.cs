@@ -7,6 +7,9 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Permissions;
 using System.Security.Principal;
 using System.ServiceModel;
+using SecurityManager;
+using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace MainComponent
 {
@@ -47,29 +50,32 @@ namespace MainComponent
             return ps.StartProcess(pid);
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
-        public void StopProcess()
-        {
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
+        public bool StopProcess(int pid)
+        {
+            return ps.StopProcess(pid);
 
         }
+
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
-        public void ShowActiveProcesses()
+        public List<Proces> ShowActiveProcesses()
         {
-            
+            return ps.ShowActiveProcesses();
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
-        public void StopAllProcesses()
-        {
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public bool StopAllProcesses()
+        {
+            return ps.StopAllProcesses();
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public void ReadLogFile()
         {
-
+            ps.ReadLogFile();
         }
 
         public void Dispose()

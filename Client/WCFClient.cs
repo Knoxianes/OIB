@@ -88,6 +88,32 @@ namespace Client
             return retValue;
         }
 
+        public void ManagePermission(bool isAdd, string rolename, params string[] permissions)
+        {
+            try
+            {
+                factory.ManagePermission(isAdd, rolename, permissions);
+                Console.WriteLine("Manage allowed");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error while trying to Manage : {0}", e.Message);
+            }
+        }
+
+        public void ManageRoles(bool isAdd, string rolename)
+        {
+            try
+            {
+                factory.ManageRoles(isAdd, rolename);
+                Console.WriteLine("Manage allowed");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error while trying to Manage : {0}", e.Message);
+            }
+        }
+
         public void ReadLogFile()
         {
             throw new NotImplementedException();

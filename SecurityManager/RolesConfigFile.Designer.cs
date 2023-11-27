@@ -63,27 +63,27 @@ namespace SecurityManager {
         /// <summary>
         ///   Looks up a localized string similar to Administrate.
         /// </summary>
-        internal static string Administration {
+        internal static string AdministrateRole {
             get {
-                return ResourceManager.GetString("Administration", resourceCulture);
+                return ResourceManager.GetString("AdministrateRole", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Basic.
         /// </summary>
-        internal static string Basics {
+        internal static string BasicRole {
             get {
-                return ResourceManager.GetString("Basics", resourceCulture);
+                return ResourceManager.GetString("BasicRole", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show.
         /// </summary>
-        internal static string Shown {
+        internal static string ShowRole {
             get {
-                return ResourceManager.GetString("Shown", resourceCulture);
+                return ResourceManager.GetString("ShowRole", resourceCulture);
             }
         }
     }

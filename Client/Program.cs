@@ -25,7 +25,19 @@ namespace Client
             using (WCFClient proxy = new WCFClient(binding, address))
             {
                 Console.WriteLine("Client Started > " + WindowsIdentity.GetCurrent().Name);
-                proxy.TestComunication();
+                //proxy.TestComunication();
+
+                proxy.ManagePermission(true, "AdministrateRole", "Administrate");
+                proxy.ManageRoles(true, "None");
+                proxy.StartProcess(1);
+                proxy.StopProcess(2);
+                var procesi = proxy.ShowActiveProcesses();
+
+                Console.WriteLine("Aktivni procesi: \n");
+                foreach (var process in procesi)
+                {
+                    Console.WriteLine(process);
+                }
                 Console.ReadLine();
             }
         }

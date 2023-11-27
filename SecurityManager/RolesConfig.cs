@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SecurityManager
 {
-    internal class RolesConfig
+    public class RolesConfig
     {
         static string path = @"~\..\..\..\..\SecurityManager\RolesConfigFile.resx";
         public static bool GetPermissions(string rolename, out string[] permissions)

@@ -22,3 +22,8 @@ C:\Users\HP\Documents\FAKS\OIB\Client\obj\Debug\Client.csproj.CoreCompileInputs.
 C:\Users\HP\Documents\FAKS\OIB\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\HP\Documents\FAKS\OIB\Client\obj\Debug\Client.exe
 C:\Users\HP\Documents\FAKS\OIB\Client\obj\Debug\Client.pdb
+C:\Users\HP\Documents\FAKS\OIB\Client\bin\Debug\Server.exe
+C:\Users\HP\Documents\FAKS\OIB\Client\bin\Debug\SecurityManager.dll
+C:\Users\HP\Documents\FAKS\OIB\Client\bin\Debug\Server.pdb
+C:\Users\HP\Documents\FAKS\OIB\Client\bin\Debug\Server.exe.config
+C:\Users\HP\Documents\FAKS\OIB\Client\bin\Debug\SecurityManager.pdb

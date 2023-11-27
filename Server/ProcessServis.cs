@@ -1,17 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common;
+using SecurityManager;
 using Server;
 
 namespace MainComponent
 {
     public class ProcessServis : IProcessServis
     {
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public void ManagePermission(bool isAdd, string rolename, params string[] permissions)
+        {
+            if (isAdd) // u pitanju je dodavanje
+            {
+                RolesConfig.AddPermissions(rolename, permissions);
+            }
+            else // u pitanju je brisanje
+            {
+                RolesConfig.RemovePermissions(rolename, permissions);
+            }
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public void ManageRoles(bool isAdd, string rolename)
+        {
+            if (isAdd) // u pitanju je dodavanje
+            {
+                RolesConfig.AddRole(rolename);
+            }
+            else // u pitanju je brisanje
+            {
+                RolesConfig.RemoveRole(rolename);
+            }
+        }
         public void ReadLogFile()
         {
             throw new NotImplementedException();

@@ -26,6 +26,12 @@ namespace Common
         void ReadLogFile();
 
         [OperationContract]
+        void ManagePermission(bool isAdd, string rolename, params string[] permissions);
+
+        [OperationContract]
+        void ManageRoles(bool isAdd, string rolename);
+
+        [OperationContract]
         void TestCommunication();
     }
 }
