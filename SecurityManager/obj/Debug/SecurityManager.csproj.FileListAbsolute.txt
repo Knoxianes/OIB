@@ -1,0 +1,8 @@
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.pdb

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CertificateManager;
 using Common;
+using SecurityManager;
 
 namespace MainComponent
 {
