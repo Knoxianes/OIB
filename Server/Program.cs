@@ -55,7 +55,7 @@ namespace MainComponent
             {
                 host.Open();
                 Console.WriteLine("WCFService is started.\nPress <enter> to stop ...");
-                using (WCFClient proxy = new WCFClient(bindingClientMainComponent, addressClientMainComponent))
+                using (WCFServis proxy = new WCFServis(bindingClientMainComponent, addressClientMainComponent))
                 {
                     proxy.TestCommunication();
                     Console.ReadLine();

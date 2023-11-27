@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common;
+using Server;
 
 namespace MainComponent
 {
@@ -16,29 +17,75 @@ namespace MainComponent
             throw new NotImplementedException();
         }
 
-        public void ShowActiveProcesses()
+        public List<Proces> ShowActiveProcesses()
         {
-            throw new NotImplementedException();
+            var procesi = new List<Proces>();
+            foreach(Proces proc in DataBase.procesi.Values)
+            {
+                if(proc.Pstate == State.Started)
+                {
+                    procesi.Add(proc);
+                }
+            }
+            return procesi;
         }
 
-        public void StartProcess()
+        public bool StartProcess(int pid)
         {
-            throw new NotImplementedException();
+            if(DataBase.procesi.ContainsKey(pid))
+            {
+                if (DataBase.procesi[pid].Pstate == State.Started)
+                {
+                    return false;
+                }
+                else
+                {
+                    DataBase.procesi[pid].Pstate = State.Started;
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void StopAllProcesses()
+        public bool StopAllProcesses()
         {
-            throw new NotImplementedException();
+            foreach(Proces proces in DataBase.procesi.Values)
+            {
+                if(proces.Pstate == State.Started)
+                {
+                    proces.Pstate = State.Stopped;
+                }
+            }
+            return true;
         }
 
-        public void StopProcess()
+        public bool StopProcess(int pid)
         {
-            throw new NotImplementedException();
+            if (DataBase.procesi.ContainsKey(pid))
+            {
+                if (DataBase.procesi[pid].Pstate == State.Stopped)
+                {
+                    return false;
+                }
+                else
+                {
+                    DataBase.procesi[pid].Pstate = State.Stopped;
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void TestCommunication()
         {
             Console.WriteLine("Communication established.");
         }
+
     }
 }

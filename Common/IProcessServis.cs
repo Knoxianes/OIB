@@ -11,15 +11,20 @@ namespace Common
     public interface IProcessServis
     {
         [OperationContract]
-        void StartProcess();
+        bool StartProcess(int pid);
+
         [OperationContract]
-        void StopProcess();
+        bool StopProcess(int pid);
+
         [OperationContract]
-        void ShowActiveProcesses();
+        List<Proces> ShowActiveProcesses();
+
         [OperationContract]
-        void StopAllProcesses(); 
+        bool StopAllProcesses(); 
+
         [OperationContract]
         void ReadLogFile();
+
         [OperationContract]
         void TestCommunication();
     }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    internal class DataBase
+    public class DataBase
     {
         internal static Dictionary<int, Proces> procesi = new Dictionary<int, Proces>();
 

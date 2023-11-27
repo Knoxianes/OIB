@@ -10,11 +10,12 @@ using System.ServiceModel;
 
 namespace MainComponent
 {
-    public class WCFClient : ChannelFactory<ILogger>, IDisposable
+    public class WCFServis : ChannelFactory<ILogger>, IDisposable
     {
         ILogger factory;
+        ProcessServis ps = new ProcessServis();
 
-        public WCFClient(NetTcpBinding binding, EndpointAddress address)
+        public WCFServis(NetTcpBinding binding, EndpointAddress address)
             : base(binding, address)
         {
             /// cltCertCN.SubjectName should be set to the client's username. .NET WindowsIdentity class provides information about Windows user running the given process
@@ -41,10 +42,9 @@ namespace MainComponent
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
-        public void StartProcess()
+        public bool StartProcess(int pid)
         {
-            
-
+            return ps.StartProcess(pid);
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
