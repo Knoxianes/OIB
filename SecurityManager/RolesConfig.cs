@@ -57,6 +57,46 @@ namespace SecurityManager
 
         }
 
+        public static void RemovePermissions(string rolename, string[] permissions)
+        {
+            var reader = new ResXResourceReader(path);
+            var node = reader.GetEnumerator();
+            var writer = new ResXResourceWriter(path);
+            while (node.MoveNext())
+            {
+                if (!node.Key.ToString().Equals(rolename))
+                {
+                    writer.AddResource(node.Key.ToString(), node.Value.ToString());
+                }
+                else
+                {
+                    List<string> currentPermisions = (node.Value.ToString().Split(',')).ToList();
+
+                    foreach (string permForDelete in permissions)
+                    {
+                        for (int i = 0; i < currentPermisions.Count(); i++)
+                        {
+                            if (currentPermisions[i].Equals(permForDelete))
+                            {
+                                currentPermisions.RemoveAt(i);
+                                break;
+                            }
+                        }
+                    }
+                    string value = currentPermisions[0];
+                    for (int i = 1; i < currentPermisions.Count(); i++)
+                    {
+                        value += "," + currentPermisions[i];
+                    }
+                    writer.AddResource(node.Key.ToString(), value);
+
+                }
+            }
+
+            writer.Generate();
+            writer.Close();
+        }
+
         
     }
 }
