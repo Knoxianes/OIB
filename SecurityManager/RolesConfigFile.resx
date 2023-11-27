@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AdministrateRole" xml:space="preserve">
+  <data name="Administrate" xml:space="preserve">
     <value>Administrate</value>
   </data>
-  <data name="BasicRole" xml:space="preserve">
+  <data name="Basic" xml:space="preserve">
     <value>Basic</value>
   </data>
-  <data name="ShowRole" xml:space="preserve">
+  <data name="Show" xml:space="preserve">
     <value>Show</value>
   </data>
 </root>

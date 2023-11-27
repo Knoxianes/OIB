@@ -25,7 +25,7 @@ namespace Client
             using (WCFClient proxy = new WCFClient(binding, address))
             {
                 Console.WriteLine("Client Started > " + WindowsIdentity.GetCurrent().Name);
-                //proxy.TestComunication();
+                proxy.TestComunication();
 
                 proxy.ManagePermission(true, "AdministrateRole", "Administrate");
                 proxy.ManageRoles(true, "None");
