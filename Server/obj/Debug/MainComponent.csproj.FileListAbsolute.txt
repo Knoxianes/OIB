@@ -24,3 +24,5 @@ C:\Users\HP\Documents\FAKS\OIB\Server\obj\Debug\Server.exe
 C:\Users\HP\Documents\FAKS\OIB\Server\obj\Debug\Server.pdb
 C:\Users\HP\Documents\FAKS\OIB\Server\bin\Debug\SecurityManager.dll
 C:\Users\HP\Documents\FAKS\OIB\Server\bin\Debug\SecurityManager.pdb
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\SecurityManager.dll
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\SecurityManager.pdb

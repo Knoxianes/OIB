@@ -12,9 +12,11 @@ namespace SecurityManager
     {
         protected override bool CheckAccessCore(OperationContext operationContext)
         {
+            //Ovde trebamo da proveravamo koji user pripada kojij grupi i da po tome proveravamo da li ima taj role
             CustomPrincipal principal = operationContext.ServiceSecurityContext.
                  AuthorizationContext.Properties["Principal"] as CustomPrincipal;
-            return principal.IsInRole("Basic");
+          
+            return principal.IsInRole("Show") || principal.IsInRole("Administrate") || principal.IsInRole("Basic");
         }
     }
 }

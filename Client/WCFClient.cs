@@ -39,6 +39,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Start Process : {0}", e.Message);
+                Console.ReadLine();
             }
             return retValue;
         }
@@ -54,6 +55,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop Process : {0}", e.Message);
+                Console.ReadLine();
             }
             return retValue;
         }
@@ -69,6 +71,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Show Active Processes : {0}", e.Message);
+                Console.ReadLine();
             }
             return ps;
         }
@@ -84,6 +87,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop All Processes : {0}", e.Message);
+                Console.ReadLine();
             }
             return retValue;
         }
@@ -98,6 +102,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Manage : {0}", e.Message);
+                Console.ReadLine();
             }
         }
 
@@ -111,6 +116,7 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Manage : {0}", e.Message);
+                Console.ReadLine();
             }
         }
 

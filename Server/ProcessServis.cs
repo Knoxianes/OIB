@@ -39,11 +39,14 @@ namespace MainComponent
                 RolesConfig.RemoveRole(rolename);
             }
         }
+
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public void ReadLogFile()
         {
             throw new NotImplementedException();
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
         public List<Proces> ShowActiveProcesses()
         {
             var procesi = new List<Proces>();
@@ -57,6 +60,7 @@ namespace MainComponent
             return procesi;
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StartProcess(int pid)
         {
             if(DataBase.procesi.ContainsKey(pid))
@@ -76,7 +80,7 @@ namespace MainComponent
                 return false;
             }
         }
-
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public bool StopAllProcesses()
         {
             foreach(Proces proces in DataBase.procesi.Values)
@@ -89,6 +93,7 @@ namespace MainComponent
             return true;
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StopProcess(int pid)
         {
             if (DataBase.procesi.ContainsKey(pid))

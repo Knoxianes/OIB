@@ -9,7 +9,7 @@ namespace SecurityManager
 {
     public class RolesConfig
     {
-        static string path = @"~\..\..\..\..\SecurityManager\RolesConfigFile.resx";
+        static string path = "C:\\Users\\knox\\Documents\\GitHub\\OIB\\SecurityManager\\RolesConfigFile.resx";
         public static bool GetPermissions(string rolename, out string[] permissions)
         {
             permissions = new string[10];

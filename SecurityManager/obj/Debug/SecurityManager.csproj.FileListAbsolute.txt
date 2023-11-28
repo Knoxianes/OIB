@@ -6,3 +6,11 @@ C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.
 C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\HP\Documents\FAKS\OIB\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.pdb

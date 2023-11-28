@@ -16,7 +16,6 @@ namespace MainComponent
     public class WCFServis : ChannelFactory<ILogger>, IDisposable
     {
         ILogger factory;
-        ProcessServis ps = new ProcessServis();
 
         public WCFServis(NetTcpBinding binding, EndpointAddress address)
             : base(binding, address)
@@ -43,41 +42,6 @@ namespace MainComponent
                 Console.WriteLine("[TestCommunication] ERROR = {0}", e.Message);
             }
         }
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
-        public bool StartProcess(int pid)
-        {
-            return ps.StartProcess(pid);
-        }
-
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
-        public bool StopProcess(int pid)
-        {
-            return ps.StopProcess(pid);
-
-        }
-
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
-        public List<Proces> ShowActiveProcesses()
-        {
-            return ps.ShowActiveProcesses();
-        }
-
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
-        public bool StopAllProcesses()
-        {
-            return ps.StopAllProcesses();
-        }
-
-        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
-        public void ReadLogFile()
-        {
-            ps.ReadLogFile();
-        }
-
         public void Dispose()
         {
             if (factory != null)

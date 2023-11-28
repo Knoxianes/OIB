@@ -61,29 +61,29 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Administrate.
+        ///   Looks up a localized string similar to Administrate,Basic,Show.
         /// </summary>
-        internal static string Administrate {
+        internal static string Admin {
             get {
-                return ResourceManager.GetString("Administrate", resourceCulture);
+                return ResourceManager.GetString("Admin", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Basic.
+        ///   Looks up a localized string similar to Basic,Show.
         /// </summary>
-        internal static string Basic {
+        internal static string Basicer {
             get {
-                return ResourceManager.GetString("Basic", resourceCulture);
+                return ResourceManager.GetString("Basicer", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show.
         /// </summary>
-        internal static string Show {
+        internal static string Shower {
             get {
-                return ResourceManager.GetString("Show", resourceCulture);
+                return ResourceManager.GetString("Shower", resourceCulture);
             }
         }
     }
