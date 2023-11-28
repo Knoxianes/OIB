@@ -26,11 +26,16 @@ namespace Client
             {
                 Console.WriteLine("Client Started > " + WindowsIdentity.GetCurrent().Name);
 
-                proxy.ManagePermission(true, "Administrate", "Administrate");
-                proxy.ManageRoles(true, "None");
                 proxy.StartProcess(1);
                 proxy.StopProcess(2);
                 var procesi = proxy.ShowActiveProcesses();
+                Console.WriteLine("Aktivni procesi: \n");
+                foreach (var process in procesi)
+                {
+                    Console.WriteLine(process);
+                }
+                proxy.StopAllProcesses();
+                procesi = proxy.ShowActiveProcesses();
 
                 Console.WriteLine("Aktivni procesi: \n");
                 foreach (var process in procesi)
