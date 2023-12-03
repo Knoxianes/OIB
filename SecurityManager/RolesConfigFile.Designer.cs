@@ -61,7 +61,7 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Administrate,Basic,Show.
+        ///   Looks up a localized string similar to Show,Basic,Administrate.
         /// </summary>
         internal static string Admin {
             get {
@@ -70,7 +70,7 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Basic,Show.
+        ///   Looks up a localized string similar to Show,Basic.
         /// </summary>
         internal static string Basicer {
             get {

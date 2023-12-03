@@ -83,14 +83,16 @@ namespace MainComponent
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public bool StopAllProcesses()
         {
+            var ret = false;
             foreach(Proces proces in DataBase.procesi.Values)
             {
                 if(proces.Pstate == State.Started)
                 {
                     proces.Pstate = State.Stopped;
+                    ret = true;
                 }
             }
-            return true;
+            return ret;
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]

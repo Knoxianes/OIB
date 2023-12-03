@@ -24,26 +24,87 @@ namespace Client
 
             using (WCFClient proxy = new WCFClient(binding, address))
             {
-                Console.WriteLine("Client Started > " + WindowsIdentity.GetCurrent().Name);
-
-                proxy.StartProcess(1);
-                proxy.StopProcess(2);
-                var procesi = proxy.ShowActiveProcesses();
-                Console.WriteLine("Aktivni procesi: \n");
-                foreach (var process in procesi)
+                var run = true;
+                do
                 {
-                    Console.WriteLine(process);
-                }
-                proxy.StopAllProcesses();
-                procesi = proxy.ShowActiveProcesses();
+                    switch (Program.PrintMenu())
+                    {
+                        case '1':
+                            Program.StartProcess(proxy);
+                            break;
+                        case '2':
+                            Program.StopProcess(proxy);
+                            break;
+                        case '3':
+                            proxy.ShowActiveProcesses();
+                            break;
+                        case '4':
+                            proxy.StopAllProcesses();
+                            break;
+                        case '0':
+                            run = false;
+                            break;
+                        default:
+                            break;
+                    }
 
-                Console.WriteLine("Aktivni procesi: \n");
-                foreach (var process in procesi)
-                {
-                    Console.WriteLine(process);
-                }
-                Console.ReadLine();
+                } while (run);
             }
+        }
+
+        public static char PrintMenu()
+        {
+            Console.WriteLine("\n\t-----------------------");
+            Console.WriteLine("\t\tMenu");
+            Console.WriteLine("\t-----------------------\n");
+            Console.WriteLine("\t1. Start process");
+            Console.WriteLine("\t2. Stop process");
+            Console.WriteLine("\t3. Show active processes");
+            Console.WriteLine("\t4. Stop all processes\n");
+            Console.WriteLine("\t0. Exit");
+            return Console.ReadKey().KeyChar;
+        }
+        public static void StartProcess(WCFClient proxy)
+        {
+            
+            Console.WriteLine("\n\n");
+            var pidCorrect = false;
+            int pid;
+            do
+            {
+                Console.Write("Please enter pid of process to start: ");
+                var readLine = Console.ReadLine();
+
+                if (!int.TryParse(readLine, out pid))
+                {
+                    Console.WriteLine("Wrong format of input try again");
+                }
+                pidCorrect = proxy.StartProcess(pid);
+                
+            } while (!pidCorrect);
+            
+            
+        }
+        public static void StopProcess(WCFClient proxy)
+        {
+
+            Console.WriteLine("\n\n");
+            var pidCorrect = false;
+            int pid;
+            do
+            {
+                Console.Write("Please enter pid of process to stop: ");
+                var readLine = Console.ReadLine();
+
+                if (!int.TryParse(readLine, out pid))
+                {
+                    Console.WriteLine("Wrong format of input try again");
+                }
+                pidCorrect = proxy.StartProcess(pid);
+
+            } while (!pidCorrect);
+
+
         }
     }
 }

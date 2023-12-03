@@ -34,12 +34,17 @@ namespace Client
             try
             {
                 retValue = factory.StartProcess(key);
-                Console.WriteLine("Start Process allowed");
+                if (!retValue)
+                {
+                    Console.WriteLine("Process with this pid is already started");
+                }
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Start Process : {0}", e.Message);
-                Console.ReadLine();
+                return true;
+              
             }
             return retValue;
         }
@@ -50,46 +55,69 @@ namespace Client
             try
             {
                 retValue = factory.StopProcess(key);
-                Console.WriteLine("Stop Process allowed");
+                if (!retValue)
+                {
+                   Console.WriteLine("Process with this pid is already stopped");
+                }
+              
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop Process : {0}", e.Message);
-                Console.ReadLine();
+                return true;
+            
             }
             return retValue;
         }
 
-        public List<Proces> ShowActiveProcesses()
+        public void ShowActiveProcesses()
         {
             List<Proces> ps = new List<Proces>();
             try
             {
+                Console.WriteLine("\n\n");
                 ps = factory.ShowActiveProcesses();
-                Console.WriteLine("Show Active Processes allowed");
+                
+                if (ps.Count <= 0)
+                {
+                    Console.WriteLine("There is no active processes right now");
+                }
+                else
+                {
+                    Console.WriteLine("\n\tActive processes:");
+                    foreach (var process in ps)
+                    {
+                        Console.WriteLine(process);
+                    }
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Show Active Processes : {0}", e.Message);
-                Console.ReadLine();
+              
             }
-            return ps;
         }
 
-        public bool StopAllProcesses()
+        public void StopAllProcesses()
         {
-            bool retValue = false;
+           
             try
             {
-                retValue = factory.StopAllProcesses();
-                Console.WriteLine("Stop All Processes allowed");
+                Console.WriteLine("\n\n");
+                var error = factory.StopAllProcesses();
+                if (!error)
+                {
+                    Console.WriteLine("All processes already stopped");
+                    return;
+                }
+                Console.WriteLine("All processes stopped");
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop All Processes : {0}", e.Message);
-                Console.ReadLine();
+              
             }
-            return retValue;
         }
 
         public void ManagePermission(bool isAdd, string rolename, params string[] permissions)
@@ -97,12 +125,12 @@ namespace Client
             try
             {
                 factory.ManagePermission(isAdd, rolename, permissions);
-                Console.WriteLine("Manage allowed");
+        
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Manage : {0}", e.Message);
-                Console.ReadLine();
+            
             }
         }
 
@@ -111,12 +139,12 @@ namespace Client
             try
             {
                 factory.ManageRoles(isAdd, rolename);
-                Console.WriteLine("Manage allowed");
+             
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Manage : {0}", e.Message);
-                Console.ReadLine();
+              
             }
         }
 

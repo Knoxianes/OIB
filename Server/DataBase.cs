@@ -12,7 +12,7 @@ namespace Server
 {
     public class DataBase
     {
-        internal static Dictionary<int, Proces> procesi = new Dictionary<int, Proces>();
+        public static Dictionary<int, Proces> procesi = new Dictionary<int, Proces>();
 
         static DataBase()
         {

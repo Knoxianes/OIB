@@ -34,7 +34,7 @@ namespace Common
 
         public override string ToString()
         {
-            return "[" + pid + "]: " + pname + ", STATE: " + pstate.ToString();
+            return "\t[" + pid + "]: " + pname + ", STATE: " + pstate.ToString();
         }
     }
 }
