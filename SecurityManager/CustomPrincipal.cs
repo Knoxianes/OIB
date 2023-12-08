@@ -30,9 +30,10 @@ namespace SecurityManager
                 string[] permissions;
                 if (RolesConfig.GetPermissions(groupName, out permissions))
                 {
-                    if (permissions.Contains(permission))
+                    foreach (string permision in permissions)
                     {
-                        return true;
+                        if (permision.Equals(permission))
+                            return true;
                     }
                 }
             }

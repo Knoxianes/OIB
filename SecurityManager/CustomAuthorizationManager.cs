@@ -12,11 +12,26 @@ namespace SecurityManager
     {
         protected override bool CheckAccessCore(OperationContext operationContext)
         {
-         
+
             CustomPrincipal principal = operationContext.ServiceSecurityContext.
-                 AuthorizationContext.Properties["Principal"] as CustomPrincipal;
-          
-            return principal.IsInRole("Show");
+                AuthorizationContext.Properties["Principal"] as CustomPrincipal;
+
+            bool retValue = principal.IsInRole("Show");
+
+            if (!retValue)
+            {
+                try
+                {
+                    Audit.AuthorizationFailed(Formatter.ParseName(principal.Identity.Name),
+                        OperationContext.Current.IncomingMessageHeaders.Action, "Need Show permission.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            return retValue;
         }
     }
 }

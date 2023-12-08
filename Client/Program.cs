@@ -70,8 +70,7 @@ namespace Client
             Console.WriteLine("\n\n");
             var pidCorrect = false;
             int pid;
-            do
-            {
+            
                 Console.Write("Please enter pid of process to start: ");
                 var readLine = Console.ReadLine();
 
@@ -81,7 +80,7 @@ namespace Client
                 }
                 pidCorrect = proxy.StartProcess(pid);
                 
-            } while (!pidCorrect);
+            
             
             
         }
@@ -91,8 +90,7 @@ namespace Client
             Console.WriteLine("\n\n");
             var pidCorrect = false;
             int pid;
-            do
-            {
+            
                 Console.Write("Please enter pid of process to stop: ");
                 var readLine = Console.ReadLine();
 
@@ -102,7 +100,7 @@ namespace Client
                 }
                 pidCorrect = proxy.StartProcess(pid);
 
-            } while (!pidCorrect);
+            
 
 
         }

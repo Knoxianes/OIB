@@ -10,3 +10,9 @@ C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.c
 C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.dll
 C:\Users\HP\Documents\FAKS\OIB\CertificateManager\obj\Debug\CertificateManager.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\CertificateManager\obj\Debug\CertificateManager.pdb

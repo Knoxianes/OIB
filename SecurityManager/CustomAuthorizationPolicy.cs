@@ -38,8 +38,22 @@ namespace SecurityManager
                 return false;
             }
 
+            WindowsIdentity windowsIdentity = identities[0] as WindowsIdentity;
+
+
+            try
+            {
+                Audit.AuthenticationSuccess(Formatter.ParseName(windowsIdentity.Name));
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
             evaluationContext.Properties["Principal"] =
-                new CustomPrincipal((WindowsIdentity)identities[0]);
+                new CustomPrincipal(windowsIdentity);
             return true;
         }
     }

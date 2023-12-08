@@ -14,3 +14,12 @@ C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csp
 C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.AuditEventFile.resources
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.pdb

@@ -10,3 +10,9 @@ C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.csproj.AssemblyReference.
 C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.dll
 C:\Users\HP\Documents\FAKS\OIB\Common\obj\Debug\Common.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\bin\Debug\Common.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\bin\Debug\Common.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.pdb
