@@ -71,6 +71,10 @@
       <Project>{7731d3ae-0d16-435f-9454-8907f1384ee2}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SecurityManager\SecurityManager.csproj">
+      <Project>{3537B95A-CFD0-4836-9070-180D2C0FF7F9}</Project>
+      <Name>SecurityManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

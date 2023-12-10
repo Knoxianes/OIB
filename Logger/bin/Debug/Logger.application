@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Logger.exe.manifest" size="5835">
+    <dependentAssembly dependencyType="install" codebase="Logger.exe.manifest" size="6483">
       <assemblyIdentity name="Logger.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hxwzz9SkVVcmT/6/RZv56kNMEydcaqKvikUgfssdYeo=</dsig:DigestValue>
+        <dsig:DigestValue>g0pHwhBiSjcGhPgPuiSvdP0gFFGZEgfqW9arJD9A81k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

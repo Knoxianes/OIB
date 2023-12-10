@@ -42,6 +42,10 @@ namespace MainComponent
                 Console.WriteLine("[TestCommunication] ERROR = {0}", e.Message);
             }
         }
+        public void WriteEvent(Alarm a)
+        {
+            factory.WriteEvent(a);
+        }
         public void Dispose()
         {
             if (factory != null)

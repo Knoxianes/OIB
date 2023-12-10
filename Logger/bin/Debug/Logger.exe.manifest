@@ -49,31 +49,43 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bzUSd0HuSfvgal+Qmf3qV1y+wqdjN6Hy8YS2fxE1c0E=</dsig:DigestValue>
+        <dsig:DigestValue>dKpVECqZUwhg2fi3ovRoabF9C5SrcuoVws+AGYzCGnk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.dll" size="6144">
       <assemblyIdentity name="Common" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jq7rzu0h1EAVhC9FDfAL353qNEoo490c1l0CIEU5iOw=</dsig:DigestValue>
+        <dsig:DigestValue>I2V5TtaoX8H7qDQeqb1ob/B7g4ZZnowOmF+b5Vivudc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Logger.exe" size="6656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Logger.exe" size="7680">
       <assemblyIdentity name="Logger" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>s1/Ko6IXWuRJH/eTBx8MbDmdnpp6ws/7tFhd8pSN6tk=</dsig:DigestValue>
+        <dsig:DigestValue>yk4zfgD3CVFTBKmGuBcbzuA8s6xtgyDVVwstaDwT7PU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SecurityManager.dll" size="14848">
+      <assemblyIdentity name="SecurityManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4yxZHvrV0z3OMEhOKqEWRdFHeq3IvbTzMqwsHz0m6MY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

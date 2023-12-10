@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Permissions;
 using System.Security.Principal;
 using System.ServiceModel;
@@ -9,6 +11,7 @@ using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using CertificateManager;
 using Common;
 using SecurityManager;
 using Server;
@@ -17,7 +20,11 @@ namespace MainComponent
 {
     public class ProcessServis : IProcessServis
     {
+        public Alarm a = new Alarm();
         public string filePath = @"C:\Users\veljk\Desktop\OIBProject\OIB\Server\Greske.txt";
+        public static int count = 0;
+        UtilityLVL ut = UtilityLVL.Information;
+        
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public void ManagePermission(bool isAdd, string rolename, params string[] permissions)
@@ -55,7 +62,7 @@ namespace MainComponent
         public List<Proces> ShowActiveProcesses()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
+            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             var procesi = new List<Proces>();
             if (Thread.CurrentPrincipal.IsInRole("Show"))
             {
@@ -79,14 +86,28 @@ namespace MainComponent
             }
             else
             {
-                string message = "Basic method need Basic permission.";
-               
+                count++;
+                string message = "Show method need Show permission.";
+                if (count <= 3)
+                {
+                    ut = UtilityLVL.Information;
+                }
+                if (count > 3 && count < 5)
+                {
+                    ut = UtilityLVL.Warning;
+                }
+                if (count > 5)
+                {
+                    ut = UtilityLVL.Error;
+                }
+                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
                 try
                 {
                     
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
+                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, "Show method need Show permission.");
+                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                 }
                 catch (Exception e)
                 {
@@ -103,7 +124,7 @@ namespace MainComponent
         public bool StartProcess(int pid)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
+            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             if (Thread.CurrentPrincipal.IsInRole("Basic"))
             {
                 try
@@ -134,13 +155,27 @@ namespace MainComponent
             }
             else
             {
+                count++;
                 string message = "Basic method need Basic permission.";
-
+                if (count <= 3)
+                {
+                    ut = UtilityLVL.Information;
+                }
+                if(count==4)
+                {
+                    ut = UtilityLVL.Warning;
+                }
+                if (count >= 5)
+                {
+                    ut = UtilityLVL.Error;
+                }
+                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
+                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, "Basic method need Basic permission.");
+                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                 }
                 catch (Exception e)
                 {
@@ -155,7 +190,7 @@ namespace MainComponent
         public bool StopAllProcesses()
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
+            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             var ret = false;
             if (Thread.CurrentPrincipal.IsInRole("Administrate"))
             {
@@ -182,12 +217,26 @@ namespace MainComponent
                 
 
                 string message = "Administrate method need Administrate permission.";
-                
+                count++;
+                if (count <= 3)
+                {
+                    ut = UtilityLVL.Information;
+                }
+                if (count == 4)
+                {
+                    ut = UtilityLVL.Warning;
+                }
+                if (count >= 5)
+                {
+                    ut = UtilityLVL.Error;
+                }
+                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
+                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, "Administrate method need Administrate permission.");
+                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                 }
                 catch (Exception e)
                 {
@@ -204,7 +253,7 @@ namespace MainComponent
         public bool StopProcess(int pid)
         {
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = Formatter.ParseName(principal.Identity.Name);
+            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             if (Thread.CurrentPrincipal.IsInRole("Basic"))
             {
                 try
@@ -236,11 +285,27 @@ namespace MainComponent
             else
             {
                 string message = "Basic method need Basic permission.";
+                count++;
+
+                if (count <= 3)
+                {
+                    ut = UtilityLVL.Information;
+                }
+                if (count == 4)
+                {
+                    ut = UtilityLVL.Warning;
+                }
+                if (count >= 5)
+                {
+                    ut = UtilityLVL.Error;
+                }
+                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
+                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, "Basic method need Basic permission.");
+                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
                 }
                 catch (Exception e)
                 {

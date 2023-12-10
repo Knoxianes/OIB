@@ -23,3 +23,6 @@ C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\Common.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\Common.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CopyComplete

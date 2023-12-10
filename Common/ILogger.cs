@@ -15,5 +15,8 @@ namespace Common
 
         [OperationContract]
         void TestCommunication();
+
+        [OperationContract]
+        void WriteEvent(Alarm a);
     }
 }

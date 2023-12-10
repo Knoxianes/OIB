@@ -40,3 +40,5 @@ C:\Users\veljk\Desktop\OIBProject\OIB\Logger\bin\Debug\Logger.application
 C:\Users\veljk\Desktop\OIBProject\OIB\Logger\obj\Debug\Logger.TrustInfo.xml
 C:\Users\veljk\Desktop\OIBProject\OIB\Logger\obj\Debug\Logger.exe.manifest
 C:\Users\veljk\Desktop\OIBProject\OIB\Logger\obj\Debug\Logger.application
+C:\Users\veljk\Desktop\OIBProject\OIB\Logger\bin\Debug\SecurityManager.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\Logger\bin\Debug\SecurityManager.pdb
