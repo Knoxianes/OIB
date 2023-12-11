@@ -123,7 +123,8 @@ namespace MainComponent
         //[PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StartProcess(int pid)
         {
-            WCFServis.factory.TestCommunication();
+            //WCFServis.factory.TestCommunication();
+            //WCFServis.factory.WriteInfo("Start Proccess");
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             if (Thread.CurrentPrincipal.IsInRole("Basic"))
@@ -255,6 +256,7 @@ namespace MainComponent
         //[PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StopProcess(int pid)
         {
+            //WCFServis.factory.WriteInfo("Stop Proccess");
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             if (Thread.CurrentPrincipal.IsInRole("Basic"))

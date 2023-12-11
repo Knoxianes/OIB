@@ -14,9 +14,27 @@ namespace Logger
         private static EventLog customLog = null;
         const string SourceName = "Logger.LoggerServis";
         const string LogName = "Greske";
+        const string LogInfo = "Info";
 
-        
-        
+        static LoggerServis()
+        {
+            try
+            {
+                if (!EventLog.SourceExists(SourceName))
+                {
+                    EventLog.CreateEventSource(SourceName, LogName);
+                }
+                customLog = new EventLog(LogName,
+                    Environment.MachineName, SourceName);
+            }
+            catch (Exception e)
+            {
+                customLog = null;
+                Console.WriteLine("Error while trying to create log handle. Error = {0}", e.Message);
+            }
+        }
+
+
         public void Read()
         {
             throw new NotImplementedException();
@@ -26,13 +44,43 @@ namespace Logger
         {
             Console.WriteLine("Communication established.");
         }
+        public void WriteInfo(string message)
+        {
+            try
+            {
+                if (!EventLog.SourceExists(SourceName))
+                {
 
+                    EventLog.CreateEventSource(SourceName, LogInfo);
+                }
+                customLog = new EventLog(LogInfo,
+                    Environment.MachineName, SourceName);
+            }
+            catch (Exception e)
+            {
+                customLog = null;
+                Console.WriteLine("Error while trying to create log handle. Error = {0}", e.Message);
+            }
+            if (customLog != null)
+            {
+
+                
+                customLog.WriteEntry(message);
+
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.",
+                    (int)AuditEventTypes.AuthenticationSuccess));
+            }
+        }
         public void WriteEvent(Alarm a)
         {
             try
             {
                 if (!EventLog.SourceExists(SourceName))
                 {
+
                     EventLog.CreateEventSource(SourceName, LogName);
                 }
                 customLog = new EventLog(LogName,
