@@ -21,7 +21,7 @@ namespace MainComponent
     public class ProcessServis : IProcessServis
     {
         public Alarm a = new Alarm();
-        public string filePath = @"C:\Users\veljk\Desktop\OIBProject\OIB\Server\Greske.txt";
+        public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Greske.txt");
         public static int count = 0;
         UtilityLVL ut = UtilityLVL.Information;
         
@@ -105,9 +105,9 @@ namespace MainComponent
                 {
                     
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                    WCFServis.factory.WriteEvent(a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                        OperationContext.Current.IncomingMessageHeaders.Action, message);
                 }
                 catch (Exception e)
                 {
@@ -175,9 +175,10 @@ namespace MainComponent
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                    WCFServis.factory.WriteEvent(a);
+                    
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                        OperationContext.Current.IncomingMessageHeaders.Action, message);
                 }
                 catch (Exception e)
                 {
@@ -236,9 +237,9 @@ namespace MainComponent
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                    WCFServis.factory.WriteEvent(a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                        OperationContext.Current.IncomingMessageHeaders.Action, message);
                 }
                 catch (Exception e)
                 {
@@ -305,9 +306,9 @@ namespace MainComponent
                 try
                 {
                     File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    //Audit.WriteWindowsEvent(userName, OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                    WCFServis.factory.WriteEvent(a);
                     Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message, a);
+                        OperationContext.Current.IncomingMessageHeaders.Action, message);
                 }
                 catch (Exception e)
                 {

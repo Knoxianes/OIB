@@ -79,33 +79,14 @@ namespace SecurityManager
         /// <param name="userName"></param>
         /// <param name="serviceName"> should be read from the OperationContext as follows: OperationContext.Current.IncomingMessageHeaders.Action</param>
         /// <param name="reason">permission name</param>
-        public static void AuthorizationFailed(string userName, string serviceName, string reason, Alarm a)
+        public static void AuthorizationFailed(string userName, string serviceName, string reason)
         {
             if (customLog != null)
             {
                 string AuthorizationFailed =
                     AuditEvents.AuthorizationFailed;
                 string message = String.Format(AuthorizationFailed,
-                    userName, serviceName, reason, a.Pname, a.DateTime.ToString());
-                customLog.WriteEntry(message, GetEventLogEntryTypeFromAlarm(a));
-               
-
-            }
-            else
-            {
-                throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.",
-                    (int)AuditEventTypes.AuthorizationFailed));
-            }
-        }
-        public static void WriteWindowsEvent(string userName, string serviceName, string reason, Alarm a)
-        {
-            if (customLog != null)
-            {
-                string AuthorizationFailed =
-                    AuditEvents.AuthorizationFailed;
-                string message = String.Format(AuthorizationFailed,
-                    userName, serviceName, reason, a.Pname, a.DateTime.ToString());
-                
+                    userName, serviceName, reason);
                 customLog.WriteEntry(message);
 
 
@@ -116,20 +97,8 @@ namespace SecurityManager
                     (int)AuditEventTypes.AuthorizationFailed));
             }
         }
-        public static EventLogEntryType GetEventLogEntryTypeFromAlarm(Alarm a)
-        {
-            switch (a.UtLVL)
-            {
-                case UtilityLVL.Information:
-                    return EventLogEntryType.Information;
-                case UtilityLVL.Warning:
-                    return EventLogEntryType.Warning;
-                case UtilityLVL.Error:
-                    return EventLogEntryType.Error;
-                default:
-                    return EventLogEntryType.Information;
-            }
-        }
+        
+        
         public void Dispose()
         {
             if (customLog != null)

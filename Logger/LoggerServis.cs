@@ -45,12 +45,13 @@ namespace Logger
             }
             if (customLog != null)
             {
+               
                 // Koristite vrednosti iz objekta Alarm
                 DateTime alarmDateTime = a.DateTime;  // Pretpostavka da želite koristiti StartDateTime
-                EventLogEntryType logEntryType = ConvertToEventLogEntryType(a.UtLVL);  // Koristite utLvl direktno
+                
 
                 // Prilagodite kako vam odgovara ostatak vaših podataka iz objekta Alarm
-                object[] values = new object[] { alarmDateTime, a.Pname };
+                object[] values = new object[] { alarmDateTime, a.Pname, a.UtLVL };
                 string message = "useo si";
                 customLog.WriteEntry(message);
                 
@@ -61,20 +62,7 @@ namespace Logger
                     (int)AuditEventTypes.AuthenticationSuccess));
             }
         }
-        private static EventLogEntryType ConvertToEventLogEntryType(UtilityLVL utLvl)
-        {
-            // Mapiranje enumeracije UtilityLVL na EventLogEntryType
-            switch (utLvl)
-            {
-                case UtilityLVL.Information:
-                    return EventLogEntryType.Information;
-                case UtilityLVL.Warning:
-                    return EventLogEntryType.Warning;
-                case UtilityLVL.Error:
-                    return EventLogEntryType.Error;
-                default:
-                    throw new ArgumentException("Unsupported UtilityLVL value");
-            }
-        }
+        
+
     }
 }

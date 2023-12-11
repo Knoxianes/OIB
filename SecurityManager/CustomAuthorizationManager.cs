@@ -16,7 +16,7 @@ namespace SecurityManager
 
             CustomPrincipal principal = operationContext.ServiceSecurityContext.
                 AuthorizationContext.Properties["Principal"] as CustomPrincipal;
-            Alarm a= new Alarm(DateTime.Now, "CheckAccessCore", UtilityLVL.Information);
+          
             bool retValue = principal.IsInRole("Show");
 
             if (!retValue)
@@ -24,7 +24,7 @@ namespace SecurityManager
                 try
                 {
                     Audit.AuthorizationFailed(Formatter.ParseName(principal.Identity.Name),
-                        OperationContext.Current.IncomingMessageHeaders.Action, "Need Show permission.", a);
+                        OperationContext.Current.IncomingMessageHeaders.Action, "Need Show permission.");
                 }
                 catch (Exception e)
                 {

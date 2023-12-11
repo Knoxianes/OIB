@@ -16,3 +16,9 @@ C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.csproj.AssemblyRef
 C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.dll
 C:\Users\veljk\Desktop\OIBProject\OIB\Common\obj\Debug\Common.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\bin\Debug\Common.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\bin\Debug\Common.pdb
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\obj\Debug\Common.dll
+C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Common\obj\Debug\Common.pdb
