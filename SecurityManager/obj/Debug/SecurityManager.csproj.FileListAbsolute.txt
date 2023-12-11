@@ -26,3 +26,7 @@ C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\Common.dll
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\bin\Debug\Common.pdb
 C:\Users\veljk\Desktop\OIBProject\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CopyComplete
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\bin\Debug\Common.dll
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\bin\Debug\Common.pdb
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.AuditEventFile.resources
+C:\Users\knox\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CopyComplete

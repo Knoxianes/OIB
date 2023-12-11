@@ -55,3 +55,8 @@ C:\Users\veljk\Desktop\OIBProject\OIB\Client\bin\Debug\Client.application
 C:\Users\veljk\Desktop\OIBProject\OIB\Client\obj\Debug\Client.TrustInfo.xml
 C:\Users\veljk\Desktop\OIBProject\OIB\Client\obj\Debug\Client.exe.manifest
 C:\Users\veljk\Desktop\OIBProject\OIB\Client\obj\Debug\Client.application
+C:\Users\knox\Documents\GitHub\OIB\Client\bin\Debug\Client.exe.manifest
+C:\Users\knox\Documents\GitHub\OIB\Client\bin\Debug\Client.application
+C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.TrustInfo.xml
+C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.exe.manifest
+C:\Users\knox\Documents\GitHub\OIB\Client\obj\Debug\Client.application

@@ -123,12 +123,14 @@ namespace MainComponent
         //[PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StartProcess(int pid)
         {
+            WCFServis.factory.TestCommunication();
             CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
             string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
             if (Thread.CurrentPrincipal.IsInRole("Basic"))
             {
                 try
                 {
+                   
                     Audit.AuthorizationSuccess(userName,
                         OperationContext.Current.IncomingMessageHeaders.Action);
                 }

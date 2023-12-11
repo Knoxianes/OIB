@@ -15,7 +15,7 @@ namespace MainComponent
 {
     public class WCFServis : ChannelFactory<ILogger>, IDisposable
     {
-        ILogger factory;
+       public static ILogger factory;
 
         public WCFServis(NetTcpBinding binding, EndpointAddress address)
             : base(binding, address)

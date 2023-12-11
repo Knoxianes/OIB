@@ -46,3 +46,8 @@ C:\Users\veljk\Desktop\OIBProject\OIB\Server\bin\Debug\Server.application
 C:\Users\veljk\Desktop\OIBProject\OIB\Server\obj\Debug\Server.TrustInfo.xml
 C:\Users\veljk\Desktop\OIBProject\OIB\Server\obj\Debug\Server.exe.manifest
 C:\Users\veljk\Desktop\OIBProject\OIB\Server\obj\Debug\Server.application
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Server.exe.manifest
+C:\Users\knox\Documents\GitHub\OIB\Server\bin\Debug\Server.application
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\Server.TrustInfo.xml
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\Server.exe.manifest
+C:\Users\knox\Documents\GitHub\OIB\Server\obj\Debug\Server.application
