@@ -21,7 +21,7 @@ namespace MainComponent
     public class ProcessServis : IProcessServis
     {
         public Alarm a = new Alarm();
-        public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Greske.txt");
+        public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Greske" ,"Greske.txt");
         public static int count = 0;
         UtilityLVL ut = UtilityLVL.Information;
         
