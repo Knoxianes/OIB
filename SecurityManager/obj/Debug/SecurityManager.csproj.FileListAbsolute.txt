@@ -42,3 +42,15 @@ C:\Users\veljk\Desktop\OIBProject\OIB\OIB\SecurityManager\obj\Debug\SecurityMana
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CopyComplete
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\bin\Debug\Common.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\bin\Debug\Common.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.AssemblyReference.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.AuditEventFile.resources
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.RolesConfigFile.resources
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.GenerateResource.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.csproj.CopyComplete
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\SecurityManager\obj\Debug\SecurityManager.pdb

@@ -3,6 +3,7 @@ using Common;
 using SecurityManager;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IdentityModel.Policy;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -18,8 +19,19 @@ namespace Logger
     {
         static void Main(string[] args)
         {
+
+            // Ako prvi put pokrecete kod vas na kompjuteru morate odkomentarisati tri linije ispod i pokrenuti logger kao admin
+            // Nakon takoga iskljucite logger i onda ga pokrenuti kao user koji ima potrebne sertifikate za logger
+
+            //EventLog.CreateEventSource(Audit.SourceName, Audit.LogInfo);
+            //EventLog.CreateEventSource(Audit.SourceName, Audit.LogName);
+            //Console.ReadLine();
+
+
             /// srvCertCN.SubjectName should be set to the service's username. .NET WindowsIdentity class provides information about Windows user running the given process
 			string srvCertCN = CertificateManager.Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+
+           
 
             NetTcpBinding binding = new NetTcpBinding();
 

@@ -66,3 +66,17 @@ C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Server\obj\Debug\MainComponent.csproj.
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Server\obj\Debug\MainComponent.csproj.CopyComplete
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Server\obj\Debug\Server.exe
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Server\obj\Debug\Server.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\Server.exe.config
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\Server.exe
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\Server.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\CertificateManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\Common.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\SecurityManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\CertificateManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\Common.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\bin\Debug\SecurityManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.AssemblyReference.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\obj\Debug\MainComponent.csproj.CopyComplete
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\obj\Debug\Server.exe
+C:\Users\Ognjen\Documents\GitHub\OIB\Server\obj\Debug\Server.pdb

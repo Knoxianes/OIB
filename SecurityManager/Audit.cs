@@ -14,8 +14,9 @@ namespace SecurityManager
     {
 
         private static EventLog customLog = null;
-        const string SourceName = "SecurityManager.Audit";
-        const string LogName = "MySecTest";
+        public const string SourceName = "SecurityManager.Audit";
+        public const string LogName = "Greske";
+        public const string LogInfo = "Info";
 
         static Audit()
         {
@@ -97,8 +98,74 @@ namespace SecurityManager
                     (int)AuditEventTypes.AuthorizationFailed));
             }
         }
-        
-        
+
+        public static void WriteInfo(string message)
+        {
+            try
+            {
+                if (!EventLog.SourceExists(SourceName))
+                {
+
+                    EventLog.CreateEventSource(SourceName, LogInfo);
+                }
+                customLog = new EventLog(LogInfo,
+                    Environment.MachineName, SourceName);
+            }
+            catch (Exception e)
+            {
+                customLog = null;
+                Console.WriteLine("Error while trying to create log handle. Error = {0}", e.Message);
+            }
+            if (customLog != null)
+            {
+
+
+                customLog.WriteEntry(message);
+
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.",
+                    (int)AuditEventTypes.AuthenticationSuccess));
+            }
+        }
+        public static void WriteEvent(Alarm a)
+        {
+            try
+            {
+                if (!EventLog.SourceExists(SourceName))
+                {
+
+                    EventLog.CreateEventSource(SourceName, LogName);
+                }
+                customLog = new EventLog(LogName,
+                    Environment.MachineName, SourceName);
+            }
+            catch (Exception e)
+            {
+                customLog = null;
+                Console.WriteLine("Error while trying to create log handle. Error = {0}", e.Message);
+            }
+            if (customLog != null)
+            {
+
+                // Koristite vrednosti iz objekta Alarm
+                DateTime alarmDateTime = a.DateTime;  // Pretpostavka da želite koristiti StartDateTime
+
+
+                // Prilagodite kako vam odgovara ostatak vaših podataka iz objekta Alarm
+                object[] values = new object[] { alarmDateTime, a.Pname, a.UtLVL };
+                string message = "useo si";
+                customLog.WriteEntry(message);
+
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.",
+                    (int)AuditEventTypes.AuthenticationSuccess));
+            }
+        }
+
         public void Dispose()
         {
             if (customLog != null)

@@ -64,3 +64,17 @@ C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Logger\obj\Debug\Logger.csproj.CoreCom
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Logger\obj\Debug\Logger.exe
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\Logger\obj\Debug\Logger.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\Logger.exe.config
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\Logger.exe
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\Logger.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\CertificateManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\Common.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\SecurityManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\CertificateManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\Common.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\bin\Debug\SecurityManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.AssemblyReference.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\obj\Debug\Logger.csproj.CopyComplete
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\obj\Debug\Logger.exe
+C:\Users\Ognjen\Documents\GitHub\OIB\Logger\obj\Debug\Logger.pdb

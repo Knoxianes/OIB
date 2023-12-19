@@ -22,3 +22,9 @@ C:\Users\veljk\Desktop\OIBProject\OIB\OIB\CertificateManager\obj\Debug\Certifica
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\CertificateManager\obj\Debug\CertificateManager.dll
 C:\Users\veljk\Desktop\OIBProject\OIB\OIB\CertificateManager\obj\Debug\CertificateManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\bin\Debug\CertificateManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\bin\Debug\CertificateManager.pdb
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.AssemblyReference.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.csproj.CoreCompileInputs.cache
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.dll
+C:\Users\Ognjen\Documents\GitHub\OIB\CertificateManager\obj\Debug\CertificateManager.pdb
