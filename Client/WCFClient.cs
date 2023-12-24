@@ -79,7 +79,7 @@ namespace Client
                     Console.WriteLine("\n\tActive processes:");
                     foreach (var process in ps)
                     {
-                        Console.WriteLine(process);
+                        Console.Write(process);
                     }
                 }
             }

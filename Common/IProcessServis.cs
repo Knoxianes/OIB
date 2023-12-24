@@ -24,7 +24,7 @@ namespace Common
         void StopAllProcesses(); 
 
         [OperationContract]
-        void ReadLogFile();
+        string ReadLogFile();
 
         [OperationContract]
         void ManagePermission(bool isAdd, string rolename, params string[] permissions);

@@ -49,9 +49,19 @@ namespace MainComponent
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
-        public void ReadLogFile()
+        public string ReadLogFile()
         {
-            throw new NotImplementedException();
+            var logs = WCFServis.factory.Read();
+            if (logs == null)
+            {
+                return "No logs";
+            }
+            var ret = "";
+            foreach(var log in logs)
+            {
+                ret += log.ToString() + "\n";
+            }
+            return ret;
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
@@ -94,7 +104,19 @@ namespace MainComponent
             {
                 foreach (var process in processes)
                 {
-                    process.Kill();
+                    if (process.ProcessName == "Logger.exe" || process.ProcessName == "Server.exe" || process.ProcessName == "Client.exe")
+                    {
+                        continue;
+                    }
+                    try
+                    {
+                        process.Kill();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Cant kill that process");
+                    }
+                    
                 }
             }
             catch (Exception ex)

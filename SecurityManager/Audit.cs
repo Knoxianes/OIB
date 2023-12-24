@@ -15,7 +15,7 @@ namespace SecurityManager
 
         private static EventLog customLog = null;
         public const string SourceName = "SecurityManager.Audit";
-        public const string LogName = "Greske";
+   
         public const string LogInfo = "Info";
 
         static Audit()
@@ -24,9 +24,9 @@ namespace SecurityManager
             {
                 if (!EventLog.SourceExists(SourceName))
                 {
-                    EventLog.CreateEventSource(SourceName, LogName);
+                    EventLog.CreateEventSource(SourceName, LogInfo);
                 }
-                customLog = new EventLog(LogName,
+                customLog = new EventLog(LogInfo,
                     Environment.MachineName, SourceName);
             }
             catch (Exception e)
@@ -136,9 +136,9 @@ namespace SecurityManager
                 if (!EventLog.SourceExists(SourceName))
                 {
 
-                    EventLog.CreateEventSource(SourceName, LogName);
+                    EventLog.CreateEventSource(SourceName, LogInfo);
                 }
-                customLog = new EventLog(LogName,
+                customLog = new EventLog(LogInfo,
                     Environment.MachineName, SourceName);
             }
             catch (Exception e)
@@ -149,14 +149,9 @@ namespace SecurityManager
             if (customLog != null)
             {
 
-                // Koristite vrednosti iz objekta Alarm
-                DateTime alarmDateTime = a.DateTime;  // Pretpostavka da želite koristiti StartDateTime
 
-
-                // Prilagodite kako vam odgovara ostatak vaših podataka iz objekta Alarm
-                object[] values = new object[] { alarmDateTime, a.Pname, a.UtLVL };
-                string message = "useo si";
-                customLog.WriteEntry(message);
+                customLog.WriteEntry(a.ToString());
+                
 
             }
             else
@@ -164,6 +159,15 @@ namespace SecurityManager
                 throw new ArgumentException(string.Format("Error while trying to write event (eventid = {0}) to event log.",
                     (int)AuditEventTypes.AuthenticationSuccess));
             }
+        }
+
+        public static EventLogEntryCollection GetEventLogs()
+        {
+            if (customLog == null)
+            {
+                return null;
+            }
+            return customLog.Entries;
         }
 
         public void Dispose()

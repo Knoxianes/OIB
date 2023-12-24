@@ -24,7 +24,6 @@ namespace Logger
             // Nakon takoga iskljucite logger i onda ga pokrenuti kao user koji ima potrebne sertifikate za logger
 
            // EventLog.CreateEventSource(Audit.SourceName, Audit.LogInfo);
-           // EventLog.CreateEventSource(Audit.SourceName, Audit.LogName);
             //Console.ReadLine();
 
 

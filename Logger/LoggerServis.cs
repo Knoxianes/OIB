@@ -13,9 +13,9 @@ namespace Logger
     {
 
 
-        public void Read()
+        public EventLogEntryCollection Read()
         {
-            throw new NotImplementedException();
+            return Audit.GetEventLogs();
         }
 
         public void TestCommunication()
