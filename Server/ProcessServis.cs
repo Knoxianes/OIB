@@ -55,9 +55,16 @@ namespace MainComponent
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
-        public Process[] ShowActiveProcesses()
+        public List<Proces> ShowActiveProcesses()
         {
-            return Process.GetProcesses();
+            var processes  = Process.GetProcesses();
+            var ret =new List<Proces>();
+            foreach(var proces in processes)
+            {
+                var tmp = new Proces(proces.Id, proces.ProcessName);
+                ret.Add(tmp);
+            }
+            return ret;
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]

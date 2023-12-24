@@ -18,7 +18,7 @@ namespace Common
         bool StopProcess(int pid);
 
         [OperationContract]
-        Process[] ShowActiveProcesses();
+        List<Proces> ShowActiveProcesses();
 
         [OperationContract]
         void StopAllProcesses(); 

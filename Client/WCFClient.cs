@@ -70,7 +70,7 @@ namespace Client
                 Console.WriteLine("\n\n");
                 var ps = factory.ShowActiveProcesses();
                 
-                if (ps.Length <= 0)
+                if (ps.Count <= 0)
                 {
                     Console.WriteLine("There is no active processes right now");
                 }
@@ -79,8 +79,7 @@ namespace Client
                     Console.WriteLine("\n\tActive processes:");
                     foreach (var process in ps)
                     {
-                        Console.Write(process.Id + " ");
-                        Console.Write(process.ProcessName + "\n");
+                        Console.WriteLine(process);
                     }
                 }
             }
