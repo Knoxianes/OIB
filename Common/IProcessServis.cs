@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -11,16 +12,16 @@ namespace Common
     public interface IProcessServis
     {
         [OperationContract]
-        bool StartProcess(int pid);
+        bool StartProcess(string path);
 
         [OperationContract]
         bool StopProcess(int pid);
 
         [OperationContract]
-        List<Proces> ShowActiveProcesses();
+        Process[] ShowActiveProcesses();
 
         [OperationContract]
-        bool StopAllProcesses(); 
+        void StopAllProcesses(); 
 
         [OperationContract]
         void ReadLogFile();
@@ -31,7 +32,5 @@ namespace Common
         [OperationContract]
         void ManageRoles(bool isAdd, string rolename);
 
-        [OperationContract]
-        void TestCommunication();
     }
 }

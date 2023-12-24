@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,16 +15,11 @@ using System.Threading.Tasks;
 using CertificateManager;
 using Common;
 using SecurityManager;
-using Server;
 
 namespace MainComponent
 {
     public class ProcessServis : IProcessServis
     {
-        public Alarm a = new Alarm();
-        public string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Greske" ,"Greske.txt");
-        public static int count = 0;
-        UtilityLVL ut = UtilityLVL.Information;
         
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
@@ -58,274 +54,70 @@ namespace MainComponent
             throw new NotImplementedException();
         }
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "Show")]
-        public List<Proces> ShowActiveProcesses()
+        [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
+        public Process[] ShowActiveProcesses()
         {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
-            var procesi = new List<Proces>();
-            if (Thread.CurrentPrincipal.IsInRole("Show"))
-            {
-                try
-                {
-                    Audit.AuthorizationSuccess(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                foreach (Proces proc in DataBase.procesi.Values)
-                {
-                    if (proc.Pstate == State.Started)
-                    {
-                        procesi.Add(proc);
-                    }
-                }
-            }
-            else
-            {
-                count++;
-                string message = "Show method need Show permission.";
-                if (count <= 3)
-                {
-                    ut = UtilityLVL.Information;
-                }
-                if (count > 3 && count < 5)
-                {
-                    ut = UtilityLVL.Warning;
-                }
-                if (count > 5)
-                {
-                    ut = UtilityLVL.Error;
-                }
-                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
-                try
-                {
-                    
-                    File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    WCFServis.factory.WriteEvent(a);
-                    Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                throw new FaultException("User " + userName +
-                    " try to call Show method. Show method need  Show permission.");
-            }
-            return procesi;
+            return Process.GetProcesses();
         }
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
-        public bool StartProcess(int pid)
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
+        public bool StartProcess(string path)
         {
-            //WCFServis.factory.TestCommunication();
-            //WCFServis.factory.WriteInfo("Start Proccess");
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
-            if (Thread.CurrentPrincipal.IsInRole("Basic"))
+            try
             {
-                try
+                var process = Process.Start(path);
+                Alarm newAlarm = new Alarm
                 {
-                   
-                    Audit.AuthorizationSuccess(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                if (DataBase.procesi.ContainsKey(pid))
-                {
-                    if (DataBase.procesi[pid].Pstate == State.Started)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        DataBase.procesi[pid].Pstate = State.Started;
-                        return true;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
+                    UtLVL = UtilityLVL.Information,
+                    DateTime = DateTime.Now,
+                    Pname = process.ProcessName
+                };
+                WCFServis.factory.WriteEvent(newAlarm);
+                return true;
+            }catch
             {
-                count++;
-                string message = "Basic method need Basic permission.";
-                if (count <= 3)
-                {
-                    ut = UtilityLVL.Information;
-                }
-                if(count==4)
-                {
-                    ut = UtilityLVL.Warning;
-                }
-                if (count >= 5)
-                {
-                    ut = UtilityLVL.Error;
-                }
-                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
-                try
-                {
-                    File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    WCFServis.factory.WriteEvent(a);
-                    
-                    Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                throw new FaultException("User " + userName +
-                    " try to call Basic method. Basic method need  Basic permission.");
+                return false;
             }
         }
-        //[PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
-        public bool StopAllProcesses()
+        [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
+        public void StopAllProcesses()
         {
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
-            var ret = false;
-            if (Thread.CurrentPrincipal.IsInRole("Administrate"))
+            var processes = Process.GetProcesses();
+            try
             {
-                try
+                foreach (var process in processes)
                 {
-                    Audit.AuthorizationSuccess(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                foreach (Proces proces in DataBase.procesi.Values)
-                {
-                    if (proces.Pstate == State.Started)
-                    {
-                        proces.Pstate = State.Stopped;
-                        ret = true;
-                    }
+                    process.Kill();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                
-
-                string message = "Administrate method need Administrate permission.";
-                count++;
-                if (count <= 3)
-                {
-                    ut = UtilityLVL.Information;
-                }
-                if (count == 4)
-                {
-                    ut = UtilityLVL.Warning;
-                }
-                if (count >= 5)
-                {
-                    ut = UtilityLVL.Error;
-                }
-                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
-                try
-                {
-                    File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    WCFServis.factory.WriteEvent(a);
-                    Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                throw new FaultException("User " + userName +
-                    " try to call Administrate method. Administrate method need  Administrate permission.");
+                Console.WriteLine(ex);
             }
-            return ret;
         }
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "Basic")]
         public bool StopProcess(int pid)
         {
-            //WCFServis.factory.WriteInfo("Stop Proccess");
-            CustomPrincipal principal = Thread.CurrentPrincipal as CustomPrincipal;
-            string userName = SecurityManager.Formatter.ParseName(principal.Identity.Name);
-            if (Thread.CurrentPrincipal.IsInRole("Basic"))
+            try
             {
-                try
+               var process = Process.GetProcessById(pid);
+                process.Kill();
+                Alarm newAlarm = new Alarm
                 {
-                    Audit.AuthorizationSuccess(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                if (DataBase.procesi.ContainsKey(pid))
-                {
-                    if (DataBase.procesi[pid].Pstate == State.Stopped)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        DataBase.procesi[pid].Pstate = State.Stopped;
-                        return true;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+                    UtLVL = UtilityLVL.Information,
+                    DateTime = DateTime.Now,
+                    Pname = process.ProcessName
+                };
+                WCFServis.factory.WriteEvent(newAlarm);
+                return true;
             }
-            else
+            catch
             {
-                string message = "Basic method need Basic permission.";
-                count++;
-
-                if (count <= 3)
-                {
-                    ut = UtilityLVL.Information;
-                }
-                if (count == 4)
-                {
-                    ut = UtilityLVL.Warning;
-                }
-                if (count >= 5)
-                {
-                    ut = UtilityLVL.Error;
-                }
-                a = new Alarm(DateTime.Now, OperationContext.Current.IncomingMessageHeaders.Action, ut);
-                try
-                {
-                    File.AppendAllText(filePath, $"{DateTime.Now}: {message}\n");
-                    WCFServis.factory.WriteEvent(a);
-                    Audit.AuthorizationFailed(userName,
-                        OperationContext.Current.IncomingMessageHeaders.Action, message);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-
-                throw new FaultException("User " + userName +
-                    " try to call Basic method. Basic method need  Basic permission.");
+                return false;
             }
         }
 
-        public void TestCommunication()
-        {
-            Console.WriteLine("Communication established.");
-        }
 
     }
 }

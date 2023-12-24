@@ -23,35 +23,29 @@ namespace Client
             factory = this.CreateChannel();
         }
 
-        public void TestComunication()
-        {
-            factory.TestCommunication();
-        }
 
-        public bool StartProcess(int key)
+        public void StartProcess(string path)
         {
-            bool retValue = false;
+            bool retValue;
             try
             {
-                retValue = factory.StartProcess(key);
+                retValue = factory.StartProcess(path);
                 if (!retValue)
                 {
-                    Console.WriteLine("Process with this pid is already started");
+                    Console.WriteLine("Can not start a process, wrong path or some other error!");
                 }
 
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Start Process : {0}", e.Message);
-                return true;
               
             }
-            return retValue;
         }
 
-        public bool StopProcess(int key)
+        public void StopProcess(int key)
         {
-            bool retValue = false;
+            bool retValue;
             try
             {
                 retValue = factory.StopProcess(key);
@@ -64,21 +58,19 @@ namespace Client
             catch (Exception e)
             {
                 Console.WriteLine("Error while trying to Stop Process : {0}", e.Message);
-                return true;
             
             }
-            return retValue;
         }
 
         public void ShowActiveProcesses()
         {
-            List<Proces> ps = new List<Proces>();
+         
             try
             {
                 Console.WriteLine("\n\n");
-                ps = factory.ShowActiveProcesses();
+                var ps = factory.ShowActiveProcesses();
                 
-                if (ps.Count <= 0)
+                if (ps.Length <= 0)
                 {
                     Console.WriteLine("There is no active processes right now");
                 }
@@ -87,7 +79,8 @@ namespace Client
                     Console.WriteLine("\n\tActive processes:");
                     foreach (var process in ps)
                     {
-                        Console.WriteLine(process);
+                        Console.Write(process.Id + " ");
+                        Console.Write(process.ProcessName + "\n");
                     }
                 }
             }
@@ -104,13 +97,7 @@ namespace Client
             try
             {
                 Console.WriteLine("\n\n");
-                var error = factory.StopAllProcesses();
-                if (!error)
-                {
-                    Console.WriteLine("All processes already stopped");
-                    return;
-                }
-                Console.WriteLine("All processes stopped");
+                factory.StopAllProcesses();
 
             }
             catch (Exception e)

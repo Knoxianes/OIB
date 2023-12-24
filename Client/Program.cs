@@ -68,17 +68,10 @@ namespace Client
         {
             
             Console.WriteLine("\n\n");
-            var pidCorrect = false;
-            int pid;
             
-                Console.Write("Please enter pid of process to start: ");
+                Console.Write("Please enter path of app to start: ");
                 var readLine = Console.ReadLine();
-
-                if (!int.TryParse(readLine, out pid))
-                {
-                    Console.WriteLine("Wrong format of input try again");
-                }
-                pidCorrect = proxy.StartProcess(pid);
+                proxy.StartProcess(readLine);
                 
             
             
@@ -88,7 +81,6 @@ namespace Client
         {
 
             Console.WriteLine("\n\n");
-            var pidCorrect = false;
             int pid;
             
                 Console.Write("Please enter pid of process to stop: ");
@@ -97,8 +89,9 @@ namespace Client
                 if (!int.TryParse(readLine, out pid))
                 {
                     Console.WriteLine("Wrong format of input try again");
+                    return;
                 }
-                pidCorrect = proxy.StartProcess(pid);
+                 proxy.StopProcess(pid);
 
             
 

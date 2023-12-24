@@ -23,8 +23,8 @@ namespace Logger
             // Ako prvi put pokrecete kod vas na kompjuteru morate odkomentarisati tri linije ispod i pokrenuti logger kao admin
             // Nakon takoga iskljucite logger i onda ga pokrenuti kao user koji ima potrebne sertifikate za logger
 
-            //EventLog.CreateEventSource(Audit.SourceName, Audit.LogInfo);
-            //EventLog.CreateEventSource(Audit.SourceName, Audit.LogName);
+           // EventLog.CreateEventSource(Audit.SourceName, Audit.LogInfo);
+           // EventLog.CreateEventSource(Audit.SourceName, Audit.LogName);
             //Console.ReadLine();
 
 
