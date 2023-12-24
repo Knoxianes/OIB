@@ -13,9 +13,31 @@ namespace Logger
     {
 
 
-        public EventLogEntryCollection Read()
+        public string Read()
         {
-            return Audit.GetEventLogs();
+            var ret = "\n";
+            try
+            {
+
+                var logs = Audit.GetEventLogs();
+                if (logs == null)
+                {
+                    return "Nema logova";
+                }
+                foreach(EventLogEntry log in logs)
+                {
+                    
+                    ret += log.Message + "\n";
+                    
+                }
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return ret;
+           
         }
 
         public void TestCommunication()
@@ -33,11 +55,11 @@ namespace Logger
                 Console.WriteLine(e.Message);
             }
         }
-        public void WriteEvent(Alarm a)
+        public void WriteEvent(Alarm a, string action)
         {
             try
             {
-                Audit.WriteEvent(a);
+                Audit.WriteEvent(a, action);
             }
             catch (Exception e)
             {

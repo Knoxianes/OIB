@@ -12,13 +12,13 @@ namespace Common
     public interface ILogger
     {
         [OperationContract]
-        EventLogEntryCollection Read();
+        string Read();
 
         [OperationContract]
         void TestCommunication();
 
         [OperationContract]
-        void WriteEvent(Alarm a);
+        void WriteEvent(Alarm a,string action);
         [OperationContract]
         void WriteInfo(string message);
     }

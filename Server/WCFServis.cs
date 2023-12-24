@@ -36,7 +36,6 @@ namespace MainComponent
             try
             {
                 factory.TestCommunication();
-                factory.WriteInfo("Ovo je test");
             }
             catch (Exception e)
             {

@@ -45,7 +45,7 @@ namespace SecurityManager
             {
                 string UserAuthenticationSuccess =
                     AuditEvents.AuthenticationSuccess;
-                string message = String.Format(UserAuthenticationSuccess,
+                string message = String.Format(UserAuthenticationSuccess, DateTime.Now,
                     userName);
                 customLog.WriteEntry(message);
             }
@@ -63,7 +63,7 @@ namespace SecurityManager
             {
                 string AuthorizationSuccess =
                     AuditEvents.AuthorizationFailed;
-                string message = String.Format(AuthorizationSuccess,
+                string message = String.Format(AuthorizationSuccess, DateTime.Now,
                     userName, serviceName);
                 customLog.WriteEntry(message);
             }
@@ -86,7 +86,7 @@ namespace SecurityManager
             {
                 string AuthorizationFailed =
                     AuditEvents.AuthorizationFailed;
-                string message = String.Format(AuthorizationFailed,
+                string message = String.Format(AuthorizationFailed,DateTime.Now,
                     userName, serviceName, reason);
                 customLog.WriteEntry(message);
 
@@ -129,7 +129,7 @@ namespace SecurityManager
                     (int)AuditEventTypes.AuthenticationSuccess));
             }
         }
-        public static void WriteEvent(Alarm a)
+        public static void WriteEvent(Alarm a, string action)
         {
             try
             {
@@ -150,7 +150,7 @@ namespace SecurityManager
             {
 
 
-                customLog.WriteEntry(a.ToString());
+                customLog.WriteEntry(a.ToString() + " - " + action);
                 
 
             }
@@ -163,11 +163,27 @@ namespace SecurityManager
 
         public static EventLogEntryCollection GetEventLogs()
         {
-            if (customLog == null)
+            try
             {
-                return null;
+                if (!EventLog.SourceExists(SourceName))
+                {
+
+                    EventLog.CreateEventSource(SourceName, LogInfo);
+                }
+                customLog = new EventLog(LogInfo,
+                    Environment.MachineName, SourceName);
+                if (customLog == null)
+                {
+                    return null;
+                }
+                return customLog.Entries;
             }
-            return customLog.Entries;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return null;
+          
         }
 
         public void Dispose()

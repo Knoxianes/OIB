@@ -61,7 +61,7 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User {0} is successfully authenticated..
+        ///   Looks up a localized string similar to {0} - User {1} is successfully authenticated..
         /// </summary>
         internal static string AuthenticationSuccess {
             get {
@@ -70,7 +70,7 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User {0} failed to access {1}. Reason: {2}..
+        ///   Looks up a localized string similar to {0} - User {1} failed to access {2}. Reason: {3}..
         /// </summary>
         internal static string AuthorizationFailure {
             get {
@@ -79,7 +79,7 @@ namespace SecurityManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User {0} successfully accessed to {1}..
+        ///   Looks up a localized string similar to {0} - User {1} successfully accessed to {2}..
         /// </summary>
         internal static string AuthorizationSuccess {
             get {

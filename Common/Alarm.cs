@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    public enum UtilityLVL { Information, Warning, Error };
+    public enum UtilityLVL { Information, Warning, Critical };
     public class Alarm
     {
         private DateTime dateTime;

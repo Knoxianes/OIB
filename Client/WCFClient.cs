@@ -76,6 +76,7 @@ namespace Client
                 }
                 else
                 {
+                    ps.Sort((a,b) => a.Pid - b.Pid);
                     Console.WriteLine("\n\tActive processes:");
                     foreach (var process in ps)
                     {
@@ -136,7 +137,15 @@ namespace Client
 
         public void ReadLogFile()
         {
-            throw new NotImplementedException();
+            try
+            {
+                
+                Console.WriteLine(factory.ReadLogFile());
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error while trying to Readlog : {0}", e.Message);
+            }
         }
 
 

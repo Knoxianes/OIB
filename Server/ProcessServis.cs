@@ -51,17 +51,16 @@ namespace MainComponent
         [PrincipalPermission(SecurityAction.Demand, Role = "Administrate")]
         public string ReadLogFile()
         {
-            var logs = WCFServis.factory.Read();
-            if (logs == null)
+            
+            try
             {
-                return "No logs";
+                return WCFServis.factory.Read();
             }
-            var ret = "";
-            foreach(var log in logs)
-            {
-                ret += log.ToString() + "\n";
+            catch (Exception ex)
+             {
+                Console.WriteLine(ex.Message);
             }
-            return ret;
+            return "";
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Show")]
@@ -89,7 +88,7 @@ namespace MainComponent
                     DateTime = DateTime.Now,
                     Pname = process.ProcessName
                 };
-                WCFServis.factory.WriteEvent(newAlarm);
+                WCFServis.factory.WriteEvent(newAlarm,"Started");
                 return true;
             }catch
             {
@@ -104,7 +103,8 @@ namespace MainComponent
             {
                 foreach (var process in processes)
                 {
-                    if (process.ProcessName == "Logger.exe" || process.ProcessName == "Server.exe" || process.ProcessName == "Client.exe")
+                    if (process.ProcessName == "Logger.exe" || process.ProcessName == "Server.exe" || process.ProcessName == "Client.exe" ||
+                        process.ProcessName == "Logger" || process.ProcessName == "Server" || process.ProcessName == "Client")
                     {
                         continue;
                     }
@@ -112,9 +112,9 @@ namespace MainComponent
                     {
                         process.Kill();
                     }
-                    catch
+                    catch 
                     {
-                        Console.WriteLine("Cant kill that process");
+                       
                     }
                     
                 }
@@ -138,7 +138,7 @@ namespace MainComponent
                     DateTime = DateTime.Now,
                     Pname = process.ProcessName
                 };
-                WCFServis.factory.WriteEvent(newAlarm);
+                WCFServis.factory.WriteEvent(newAlarm, "Stopped");
                 return true;
             }
             catch

@@ -41,6 +41,9 @@ namespace Client
                         case '4':
                             proxy.StopAllProcesses();
                             break;
+                        case '5':
+                            proxy.ReadLogFile();
+                            break;
                         case '0':
                             run = false;
                             break;
@@ -60,7 +63,8 @@ namespace Client
             Console.WriteLine("\t1. Start process");
             Console.WriteLine("\t2. Stop process");
             Console.WriteLine("\t3. Show active processes");
-            Console.WriteLine("\t4. Stop all processes\n");
+            Console.WriteLine("\t4. Stop all processes");
+            Console.WriteLine("\t5. Read log file\n");
             Console.WriteLine("\t0. Exit");
             return Console.ReadKey().KeyChar;
         }
