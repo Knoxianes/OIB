@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.IdentityModel.Policy;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -12,6 +14,8 @@ using System.Threading.Tasks;
 using CertificateManager;
 using Common;
 using SecurityManager;
+using System.Configuration;
+using System.IO;
 
 namespace MainComponent
 {
@@ -64,6 +68,18 @@ namespace MainComponent
                 using (WCFServis proxy = new WCFServis(bindingClientMainComponent, addressClientMainComponent))
                 {
                     proxy.TestCommunication();
+                    Task.Factory.StartNew(async () =>
+                    {
+                        int count = 0;
+                        int timer = int.Parse(ConfigurationSettings.AppSettings["timer"]);
+                        while (proxy.State == CommunicationState.Opened)
+                        {
+                            
+                            CheckProcesses(proxy,ref count);
+                            await Task.Delay(timer);
+                        }
+                        
+                    });
                     Console.ReadLine();
                 }
             }
@@ -79,5 +95,51 @@ namespace MainComponent
             }
 
         } 
+        static void CheckProcesses(WCFServis proxy,ref int count)
+        {
+            var listProcesses = Process.GetProcesses();
+            var badProcesses = ReadBadProcesses();
+            foreach (Process process in  listProcesses)
+            {
+                if (badProcesses.Contains(process.ProcessName))
+                {
+                    try
+                    {
+                        process.Kill();
+                        count++;
+                        proxy.WriteLog(process, count);
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                   
+                }
+            }
+            
+        }
+
+        static string file = "badprocesses.txt";
+        static List<string> ReadBadProcesses()
+        {
+            var list = new List<string>();
+            if (File.Exists(file))
+            {
+                // Reads file line by line 
+                StreamReader Textfile = new StreamReader(file);
+                string line;
+
+                while ((line = Textfile.ReadLine()) != null)
+                {
+                    
+                    list.Add(line);
+                }
+
+                Textfile.Close();
+
+            }
+            return list;
+        }
     }
 }

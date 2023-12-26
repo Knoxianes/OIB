@@ -10,6 +10,7 @@ using System.ServiceModel;
 using SecurityManager;
 using System.Security.Cryptography;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace MainComponent
 {
@@ -40,6 +41,48 @@ namespace MainComponent
             catch (Exception e)
             {
                 Console.WriteLine("[TestCommunication] ERROR = {0}", e.Message);
+            }
+        }
+
+        public void WriteLog(Process badProcess, int count)
+        {
+            try
+            {
+                if(count >= 5)
+                {
+                    Alarm newAlaram = new Alarm()
+                    {
+                        Pname = badProcess.ProcessName,
+                        UtLVL = UtilityLVL.Critical,
+                        DateTime = DateTime.Now
+                    };
+                    factory.WriteEvent(newAlaram, "Bad process");
+
+                }else if (count >= 4)
+                {
+                    Alarm newAlaram = new Alarm()
+                    {
+                        Pname = badProcess.ProcessName,
+                        UtLVL = UtilityLVL.Warning,
+                        DateTime = DateTime.Now
+                    };
+                    factory.WriteEvent(newAlaram, "Bad process");
+
+                }
+                else if(count >= 2)
+                {
+                    Alarm newAlaram = new Alarm()
+                    {
+                        Pname = badProcess.ProcessName,
+                        UtLVL = UtilityLVL.Information,
+                        DateTime = DateTime.Now
+                    };
+                    factory.WriteEvent(newAlaram, "Bad process");
+                }
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine("Error while writting log for bad process! ", ex.Message);
             }
         }
         
